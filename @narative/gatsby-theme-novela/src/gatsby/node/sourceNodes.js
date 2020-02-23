@@ -10,7 +10,7 @@ module.exports = ({ actions }) => {
       body: String!
       hero: File @fileByRelativePath
       thumbnail: File @fileByRelativePath
-      video: File @fileByRelativePath
+      video: String
       timeToRead: Int
     }
 

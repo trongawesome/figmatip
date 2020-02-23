@@ -25,22 +25,21 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
     <Hero>
       <Header>
         <HeroHeading>{article.title}</HeroHeading>
-        <Excerpt>{article.excerpt}</Excerpt>
-        <HeroSubtitle hasCoAUthors={hasCoAUthors}>
+        {/* <Excerpt>{article.excerpt}</Excerpt> */}
+        {/* <HeroSubtitle hasCoAUthors={hasCoAUthors}>
           <ArticleAuthors authors={authors} />
           <ArticleMeta hasCoAUthors={hasCoAUthors}>
             {article.date}
-            {/* {article.date} · {article.timeToRead} min read */}
           </ArticleMeta>
-        </HeroSubtitle>
+        </HeroSubtitle> */}
       </Header>
-      <HeroImage id="ArticleImage__Hero">
+      {/* <HeroImage id="ArticleImage__Hero">
         {hasHeroImage ? (
           <Image src={article.hero.full} />
         ) : (
           <ImagePlaceholder />
         )}
-      </HeroImage>
+      </HeroImage> */}
     </Hero>
   );
 };

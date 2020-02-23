@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 
 import Headings from '@components/Headings';
 import Image, { ImagePlaceholder } from '@components/Image';
+import MDXRenderer from "@components/MDX";
 
 import mediaqueries from '@styles/media';
 import { IArticle } from '@types';
@@ -69,24 +70,23 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
     imageSource.constructor === Object;
 
   return (
-    <ArticleLink to={article.slug} data-a11y="false">
+    <ArticleWrap>
       <Item>
-        <ImageContainer >
+        {/* <ImageContainer >
           {hasHeroImage ? <Image src={imageSource} /> : <ImagePlaceholder />}
-        </ImageContainer>
+        </ImageContainer> */}
         <div>
           <Title dark hasOverflow={hasOverflow}>
             {article.title}
           </Title>
-          <Excerpt>
-            {article.excerpt}
-          </Excerpt>
           <MetaData>
             {article.date}
           </MetaData>
+          <MDXRenderer content={article.body}>
+          </MDXRenderer>
         </div>
       </Item>
-    </ArticleLink>
+    </ArticleWrap>
   );
 };
 
@@ -121,17 +121,13 @@ const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
 
 const List = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 30px;
   grid-template-rows: 2;
 
   &:not(:last-child) {
     margin-bottom: 75px;
   }
-
-  ${mediaqueries.desktop_medium`
-    grid-template-columns: 1fr 1fr;
-  `}
 
   ${mediaqueries.tablet`
     grid-template-columns: 1fr;
@@ -188,6 +184,7 @@ const Title = styled(Headings.h2)`
   font-family: ${p => p.theme.fonts.title};
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
+  max-width: 300px;
   ${limitToTwoLines};
 
   ${mediaqueries.desktop`
@@ -213,7 +210,7 @@ const Excerpt = styled.p`
   color: ${p => p.theme.colors.secondary};
   font-family: ${p => p.theme.fonts.body};
   display: box;
-  max-width: 515px;
+  // max-width: 515px;
 
   ${mediaqueries.desktop`
     display: -webkit-box;
@@ -241,6 +238,10 @@ const MetaData = styled.div`
     max-width: 100%;
     padding:  0 20px 30px;
   `}
+`;
+
+const ArticleWrap = styled.div`
+  position: relative;
 `;
 
 const ArticleLink = styled(Link)`
