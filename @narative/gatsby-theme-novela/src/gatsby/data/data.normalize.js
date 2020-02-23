@@ -29,42 +29,6 @@ function normalizeHero(article) {
   return hero;
 }
 
-function normalizeHeroBook(article) {
-  let hero = {
-    full: {},
-    narrow: {},
-    seo: {},
-  };
-
-  if (article.hero) {
-    hero = {
-      full: article.hero.full.fluid,
-      narrow: article.hero.narrow.fluid,
-      seo: article.hero.seo.fixed,
-    };
-  } else {
-    console.log('\u001B[33m', `Missing hero for "${article.title}"`);
-  }
-
-  return hero;
-}
-
-function normalizeThumnail(article) {
-  let thumbnail = {
-    regular: {},
-  };
-
-  if (article.thumbnail) {
-    thumbnail = {
-      regular: article.thumbnail.regular.fluid,
-    };
-  } else {
-    console.log('\u001B[33m', `Missing thumbnail for "${article.title}"`);
-  }
-
-  return thumbnail;
-}
-
 function normalizeAvatar(author) {
   let avatar = {
     small: {},
@@ -92,19 +56,6 @@ module.exports.local = {
       hero: normalizeHero(article),
     };
   },
-  portfolios: ({ node: portfolio }) => {
-    return {
-      ...portfolio,
-      hero: normalizeHero(portfolio),
-      thumbnail: normalizeThumnail(portfolio),
-    };
-  },
-  readings: ({ node: reading }) => {
-    return {
-      ...reading,
-      hero: normalizeHeroBook(reading),
-    };
-  },
   authors: ({ node: author }) => {
     return {
       ...author,
@@ -128,39 +79,6 @@ module.exports.contentful = {
       author,
       body: article.body.childMdx.body,
       timeToRead: article.body.childMdx.timeToRead,
-    };
-  },
-  portfolios: ({ node: portfolio }) => {
-    const author = portfolio.author.reduce((curr, next, index, array) => {
-      if (array.length === 1) {
-        return next.name;
-      }
-
-      return `${curr + next.name}, `;
-    }, ``);
-
-    return {
-      ...portfolio,
-      author,
-      body: portfolio.body.childMdx.body,
-      timeToRead: portfolio.body.childMdx.timeToRead,
-    };
-  },
-
-  readings: ({ node: reading }) => {
-    const author = reading.author.reduce((curr, next, index, array) => {
-      if (array.length === 1) {
-        return next.name;
-      }
-
-      return `${curr + next.name}, `;
-    }, ``);
-
-    return {
-      ...reading,
-      author,
-      body: reading.body.childMdx.body,
-      timeToRead: reading.body.childMdx.timeToRead,
     };
   },
 
