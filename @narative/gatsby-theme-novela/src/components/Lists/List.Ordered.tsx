@@ -61,11 +61,12 @@ const OrderedList = styled.ol`
   li::before {
     counter-increment: list;
     content: counter(list) '.';
-    font-weight: 300;
+    // font-weight: 400;
+    font-weight: ${p => p.theme.fontsWeight.regular};
     position: absolute;
     left: -3rem;
-    top: -0.3rem;
-    font-size: 2rem;
+    top: 0;
+    font-size: 18px;
 
     ${mediaqueries.tablet`
       left: 0;
