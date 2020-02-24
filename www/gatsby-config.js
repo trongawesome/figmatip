@@ -7,11 +7,11 @@ const siteMetadata = {
   description: `Product Designer who's learning to write and express thoughts`,
   hero: {
     heading: `Hi, I’m Trong, <br/>product designer.`,
-    writingHeading: `Writing is designing.`,
+    writingHeading: `Tips to <br/>fasten <br/>Figma <br/>workflow.`,
     readingHeading: `Books for product designers`,
     littleGalleryHeading: `Little big grid`,
     littleGallerySubtitle: `Little works and experiments but my big pride. I pour them all in this grid.`,
-    maxWidth: 776,
+    maxWidth: 480,
   },
   social: [
     {

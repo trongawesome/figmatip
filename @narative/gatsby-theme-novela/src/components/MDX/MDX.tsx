@@ -327,6 +327,10 @@ const Grid = css`
     position: relative;
     margin: 15px auto 50px;
     
+    & .video {
+      margin-top: -140px;
+    }
+
     &.Col2 {
       grid-template-columns: 300px 1fr;
       

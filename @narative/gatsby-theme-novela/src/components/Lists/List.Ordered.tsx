@@ -9,7 +9,7 @@ const OrderedList = styled.ol`
   padding: 15px 0 30px 30px;
   margin: 0 auto;
   transition: ${p => p.theme.colorModeTransition};
-  font-size: 18px;
+  font-size: 16px;
 
   width: 100%;
   max-width: 680px;
@@ -66,7 +66,7 @@ const OrderedList = styled.ol`
     position: absolute;
     left: -3rem;
     top: 0;
-    font-size: 18px;
+    font-size: 16px;
 
     ${mediaqueries.tablet`
       left: 0;

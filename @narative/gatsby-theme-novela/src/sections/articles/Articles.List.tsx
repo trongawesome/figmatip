@@ -4,7 +4,6 @@ import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 
 import Headings from '@components/Headings';
-import Image, { ImagePlaceholder } from '@components/Image';
 import MDXRenderer from "@components/MDX";
 
 import mediaqueries from '@styles/media';
@@ -63,25 +62,17 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
   if (!article) return null;
 
   const hasOverflow = narrow && article.title.length > 35;
-  const imageSource = article.hero.narrow;
-  const hasHeroImage =
-    imageSource &&
-    Object.keys(imageSource).length !== 0 &&
-    imageSource.constructor === Object;
 
   return (
     <ArticleWrap>
       <Item>
-        {/* <ImageContainer >
-          {hasHeroImage ? <Image src={imageSource} /> : <ImagePlaceholder />}
-        </ImageContainer> */}
         <div>
           <Title dark hasOverflow={hasOverflow}>
             {article.title}
           </Title>
-          <MetaData>
+          {/* <MetaData>
             {article.date}
-          </MetaData>
+          </MetaData> */}
           <MDXRenderer content={article.body}>
           </MDXRenderer>
         </div>
@@ -116,6 +107,7 @@ const showDetails = css`
 
 const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
+  margin-top: 160px;
   ${p => p.alwaysShowAllDetails && showDetails}
 `;
 
@@ -140,7 +132,7 @@ const List = styled.div`
 
 const Item = styled.div`
   position: relative;
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 
   ${mediaqueries.tablet`
     margin-bottom: 60px;
@@ -180,12 +172,13 @@ const ImageContainer = styled.div`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 21px;
+  font-size: 28px;
   font-family: ${p => p.theme.fonts.title};
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
   max-width: 300px;
-  ${limitToTwoLines};
+  line-height: 1.15;
+  // ${limitToTwoLines};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
@@ -199,31 +192,6 @@ const Title = styled(Headings.h2)`
     font-size: 22px;  
     padding: 30px 20px 0;
     margin-bottom: 10px;
-    -webkit-line-clamp: 3;
-  `}
-`;
-
-const Excerpt = styled.p`
-  ${limitToTwoLines};
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: ${p => p.theme.colors.secondary};
-  font-family: ${p => p.theme.fonts.body};
-  display: box;
-  // max-width: 515px;
-
-  ${mediaqueries.desktop`
-    display: -webkit-box;
-  `}
-
-  ${mediaqueries.phablet`
-    margin-bottom; 15px;
-  `}
-
-  ${mediaqueries.phablet`
-    max-width: 100%;
-    padding:  0 20px;
-    margin-bottom: 20px;
     -webkit-line-clamp: 3;
   `}
 `;

@@ -22,7 +22,7 @@ const ArticlesPage: Template = ({ location, pageContext }) => {
       <SEO pathname={location.pathname} />
       <ArticlesHero authors={authors} />
       <Section narrow>
-        <NavCategory category={category} />
+        {/* <NavCategory category={category} /> */}
         <ArticlesList articles={articles} />
         <ArticlesPaginator show={pageContext.pageCount > 1}>
           <Paginator {...pageContext} />
@@ -36,4 +36,9 @@ export default ArticlesPage;
 
 const ArticlesPaginator = styled.div<{ show: boolean }>`
   ${p => p.show && `margin-top: 64px;`}
+`;
+
+const ArticlesListWrap = styled.div`
+  margin-top: 80px;
+  position: relative;
 `;

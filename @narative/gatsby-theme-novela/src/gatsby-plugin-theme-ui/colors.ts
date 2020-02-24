@@ -6,7 +6,7 @@ export default {
   primary: "#FFFFFF",
   secondary: "#EDEBEB",
   grey: "rgba(255, 255, 255, 0.5)",
-  background: "#141414",
+  background: "#090A0B",
   backgroundModal: "rgba(209, 232, 235, 0.98)",
   cleanBackground: "#FFFFFF",
   accent: "#F5495E",

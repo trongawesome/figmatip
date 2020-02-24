@@ -76,7 +76,9 @@ const HeadingContainer = styled.div`
   font-size: 64px;
   line-height: 1.15;
   font-family: ${p => p.theme.fonts.title};
-  color: ${p => p.theme.colors.primary};
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(92.72deg, #E0EBF2 4.64%, #F2B5B0 87.93%);
 
   a {
     color: ${p => p.theme.colors.accent};
