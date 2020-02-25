@@ -83,7 +83,7 @@ const HeroContainer = styled.div`
   height: 800px;
 
   ${mediaqueries.tablet`
-    height: 488px;
+    height: 536px;
   `}
 
 `;
@@ -139,11 +139,11 @@ const HeroContent = styled.div`
 `;
 
 const HeadingContainer = styled.div`
-  margin: 250px 0 40px;
+  margin: 280px 0 40px;
   
   ${mediaqueries.tablet`
     width: 100%;
-    margin-top: 160px;
+    margin-top: 200px;
   `}
 `;
 

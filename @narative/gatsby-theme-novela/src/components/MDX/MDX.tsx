@@ -330,6 +330,10 @@ const Grid = css`
     & .video {
       margin-top: -160px;
 
+      ${mediaqueries.desktop`
+        margin-top: -112px;
+      `};
+
       ${mediaqueries.tablet`
         margin-top: -104px;
       `};

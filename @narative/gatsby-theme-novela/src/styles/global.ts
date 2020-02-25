@@ -39,7 +39,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "Inter", sans-serif;
+    font-family: "Text", "Inter", sans-serif;
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

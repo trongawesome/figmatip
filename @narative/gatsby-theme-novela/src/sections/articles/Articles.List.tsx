@@ -8,6 +8,7 @@ import MDXRenderer from "@components/MDX";
 
 import mediaqueries from '@styles/media';
 import { IArticle } from '@types';
+import Icons from "@icons";
 
 import { GridLayoutContext } from './Articles.List.Context';
 
@@ -69,11 +70,14 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow, counter })
       <Item>
         <div>
           <TitleWrap>
-            {
-              counter < 10
-              ? <Counter> {"#0" + counter} </Counter>
-              : <Counter> {"#" + counter} </Counter>
-            }
+            <ViewDetailLink to={article.slug} data-a11y="false">
+              {
+                counter < 10
+                ? <span> {"#0" + counter} </span>
+                : <span> {"#" + counter} </span>
+              }
+              <Icons.Link />
+            </ViewDetailLink>
             <Title dark hasOverflow={hasOverflow}>
               {article.title}
             </Title>
@@ -154,29 +158,6 @@ const Item = styled.div`
 
 `;
 
-const ImageContainer = styled.div`
-  position: relative;
-  height: 280px;
-  margin-bottom: 30px;
-  transition: transform 0.3s var(--ease-out-quad),
-    box-shadow 0.3s var(--ease-out-quad);
-
-  & > div {
-    height: 100%;
-  }
-
-  ${mediaqueries.tablet`
-    height: 200px;
-    margin-bottom: 35px;
-  `}
-
-  ${mediaqueries.phablet`
-    overflow: hidden;
-    margin-bottom: 0;
-    box-shadow: none;
-  `}
-`;
-
 const TitleWrap = styled.div`
   max-width: 360px;
 `;
@@ -199,63 +180,18 @@ const Title = styled(Headings.h2)`
   `}
 `;
 
-const Counter = styled.div`
-  font-weight: ${p => p.theme.fontsWeight.bold};
-  font-size: 48px;
-  color: ${p => p.theme.colors.grey};
-  font-family: ${p => p.theme.fonts.title};
-
-  ${mediaqueries.phablet`
-    
-  `}
-`;
-
 const ArticleWrap = styled.div`
   position: relative;
 `;
 
-const ArticleLink = styled(Link)`
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transition: transform 0.33s var(--ease-out-quart);
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+const ViewDetailLink = styled(Link)`
+  font-weight: ${p => p.theme.fontsWeight.bold};
+  font-size: 48px;
+  color: ${p => p.theme.colors.grey};
+  font-family: ${p => p.theme.fonts.title};
+  transition: color 0.25s ease 0s;
 
-  &:hover ${ImageContainer}, &:focus ${ImageContainer} {
-    transform: translateY(-1px);
-    box-shadow: 0 30px 40px -20px rgba(41, 65, 69, 0.32),
-      0 30px 30px -30px rgba(41, 65, 69, 0.52);
+  &:hover {
+    color: ${p => p.theme.colors.secondary};
   }
-
-  &:hover h2,
-  &:focus h2 {
-    color: ${p => p.theme.colors.accent};
-  }
-
-  &[data-a11y='true']:focus::after {
-    content: '';
-    position: absolute;
-    left: -1.5%;
-    top: -2%;
-    width: 103%;
-    height: 104%;
-    border: 3px solid ${p => p.theme.colors.accent};
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 5px;
-  }
-
-  ${mediaqueries.phablet`
-    &:hover ${ImageContainer} {
-      transform: none;
-      box-shadow: initial;
-    }
-
-    &:active {
-      transform: scale(0.97) translateY(3px);
-    }
-  `}
 `;

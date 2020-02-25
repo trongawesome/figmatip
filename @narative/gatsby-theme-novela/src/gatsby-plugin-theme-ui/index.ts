@@ -15,7 +15,7 @@ const breakpoints = [
 
 const fonts = {
   title: "'Title', sans-serif",
-  body: "'Inter', sans-serif",
+  body: "'Text' ,'Inter', sans-serif",
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 
