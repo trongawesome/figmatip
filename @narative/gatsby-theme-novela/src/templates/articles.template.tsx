@@ -22,31 +22,23 @@ const ArticlesPage: Template = ({ location, pageContext }) => {
       <SEO pathname={location.pathname} />
       <ArticlesHero authors={authors} />
       <Section narrow>
-        <NavCategory category={category} />
+        {/* <NavCategory category={category} /> */}
         <ArticlesList articles={articles} />
         <ArticlesPaginator show={pageContext.pageCount > 1}>
           <Paginator {...pageContext} />
         </ArticlesPaginator>
       </Section>
-      <ArticlesGradient />
     </Layout>
   );
 };
 
 export default ArticlesPage;
 
-const ArticlesGradient = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 590px;
-  z-index: 0;
-  pointer-events: none;
-  background: ${p => p.theme.colors.gradient};
-  transition: ${p => p.theme.colorModeTransition};
-`;
-
 const ArticlesPaginator = styled.div<{ show: boolean }>`
   ${p => p.show && `margin-top: 64px;`}
+`;
+
+const ArticlesListWrap = styled.div`
+  margin-top: 80px;
+  position: relative;
 `;

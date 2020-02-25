@@ -14,14 +14,13 @@ const breakpoints = [
 ];
 
 const fonts = {
-  title: "'Title', Georgia, Serif",
-  body:
-    "'Text','Libre Baskerville', Georgia, Serif",
+  title: "'Title', sans-serif",
+  body: "'Inter', sans-serif",
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 
 const fontsWeight = {
-  regular: "300",
+  regular: "400",
   bold: "600",
 };
 

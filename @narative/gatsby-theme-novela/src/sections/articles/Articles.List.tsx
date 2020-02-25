@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 
 import Headings from '@components/Headings';
-import Image, { ImagePlaceholder } from '@components/Image';
+import MDXRenderer from "@components/MDX";
 
 import mediaqueries from '@styles/media';
 import { IArticle } from '@types';
@@ -62,31 +62,22 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
   if (!article) return null;
 
   const hasOverflow = narrow && article.title.length > 35;
-  const imageSource = article.hero.narrow;
-  const hasHeroImage =
-    imageSource &&
-    Object.keys(imageSource).length !== 0 &&
-    imageSource.constructor === Object;
 
   return (
-    <ArticleLink to={article.slug} data-a11y="false">
+    <ArticleWrap>
       <Item>
-        <ImageContainer >
-          {hasHeroImage ? <Image src={imageSource} /> : <ImagePlaceholder />}
-        </ImageContainer>
         <div>
           <Title dark hasOverflow={hasOverflow}>
             {article.title}
           </Title>
-          <Excerpt>
-            {article.excerpt}
-          </Excerpt>
-          <MetaData>
+          {/* <MetaData>
             {article.date}
-          </MetaData>
+          </MetaData> */}
+          <MDXRenderer content={article.body}>
+          </MDXRenderer>
         </div>
       </Item>
-    </ArticleLink>
+    </ArticleWrap>
   );
 };
 
@@ -116,22 +107,19 @@ const showDetails = css`
 
 const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
+  margin-top: 160px;
   ${p => p.alwaysShowAllDetails && showDetails}
 `;
 
 const List = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 30px;
   grid-template-rows: 2;
 
   &:not(:last-child) {
     margin-bottom: 75px;
   }
-
-  ${mediaqueries.desktop_medium`
-    grid-template-columns: 1fr 1fr;
-  `}
 
   ${mediaqueries.tablet`
     grid-template-columns: 1fr;
@@ -144,7 +132,7 @@ const List = styled.div`
 
 const Item = styled.div`
   position: relative;
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 
   ${mediaqueries.tablet`
     margin-bottom: 60px;
@@ -184,11 +172,13 @@ const ImageContainer = styled.div`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 21px;
+  font-size: 28px;
   font-family: ${p => p.theme.fonts.title};
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
-  ${limitToTwoLines};
+  max-width: 300px;
+  line-height: 1.15;
+  // ${limitToTwoLines};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
@@ -206,31 +196,6 @@ const Title = styled(Headings.h2)`
   `}
 `;
 
-const Excerpt = styled.p`
-  ${limitToTwoLines};
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: ${p => p.theme.colors.secondary};
-  font-family: ${p => p.theme.fonts.body};
-  display: box;
-  max-width: 515px;
-
-  ${mediaqueries.desktop`
-    display: -webkit-box;
-  `}
-
-  ${mediaqueries.phablet`
-    margin-bottom; 15px;
-  `}
-
-  ${mediaqueries.phablet`
-    max-width: 100%;
-    padding:  0 20px;
-    margin-bottom: 20px;
-    -webkit-line-clamp: 3;
-  `}
-`;
-
 const MetaData = styled.div`
   font-weight: 400;
   font-size: 14px;
@@ -241,6 +206,10 @@ const MetaData = styled.div`
     max-width: 100%;
     padding:  0 20px 30px;
   `}
+`;
+
+const ArticleWrap = styled.div`
+  position: relative;
 `;
 
 const ArticleLink = styled(Link)`

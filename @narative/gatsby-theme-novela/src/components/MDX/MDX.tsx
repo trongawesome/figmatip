@@ -210,6 +210,16 @@ const PrismCSS = p => css`
   }
 `;
 
+const VideoCSS = css`
+  video {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    z-index: 0;
+    margin: 15px auto 50px;
+  }
+`;
 const ImageCSS = css`
   .gatsby-resp-image-background-image {
     display: none !important;
@@ -313,12 +323,20 @@ const ImageCSS = css`
 const Grid = css`
   .Grid {
     display: grid;
-    grid-gap: 8px;
+    grid-gap: 80px;
     position: relative;
     margin: 15px auto 50px;
     
+    & .video {
+      margin-top: -140px;
+    }
+
     &.Col2 {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 300px 1fr;
+      
+      ${mediaqueries.tablet`
+        grid-template-columns: 200px 1fr;
+      `};
       
       ${mediaqueries.phone`
         grid-template-columns: 1fr;
@@ -365,4 +383,5 @@ const MDXBody = styled.div`
   ${PrismCSS}
   ${ImageCSS}
   ${Grid}
+  ${VideoCSS}
 `;
