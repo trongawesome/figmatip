@@ -332,7 +332,7 @@ const Grid = css`
     }
 
     &.Col2 {
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 360px 1fr;
       
       ${mediaqueries.tablet`
         grid-template-columns: 200px 1fr;

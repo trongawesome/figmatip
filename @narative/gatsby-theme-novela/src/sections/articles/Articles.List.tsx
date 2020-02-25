@@ -176,7 +176,7 @@ const Title = styled(Headings.h2)`
   font-family: ${p => p.theme.fonts.title};
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
-  max-width: 300px;
+  max-width: 360px;
   line-height: 1.15;
   // ${limitToTwoLines};
 
