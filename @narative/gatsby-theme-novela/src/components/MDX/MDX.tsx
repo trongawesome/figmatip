@@ -328,14 +328,25 @@ const Grid = css`
     margin: 15px auto 50px;
     
     & .video {
-      margin-top: -140px;
+      margin-top: -160px;
+
+      ${mediaqueries.desktop`
+        margin-top: -112px;
+      `};
+
+      ${mediaqueries.tablet`
+        margin-top: -104px;
+      `};
     }
 
     &.Col2 {
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 360px 1fr;
       
+      ${mediaqueries.desktop`
+        grid-template-columns: 1fr;
+      `};
+
       ${mediaqueries.tablet`
-        grid-template-columns: 200px 1fr;
       `};
       
       ${mediaqueries.phone`

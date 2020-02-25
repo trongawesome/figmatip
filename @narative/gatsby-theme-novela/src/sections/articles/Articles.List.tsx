@@ -8,6 +8,7 @@ import MDXRenderer from "@components/MDX";
 
 import mediaqueries from '@styles/media';
 import { IArticle } from '@types';
+import Icons from "@icons";
 
 import { GridLayoutContext } from './Articles.List.Context';
 
@@ -18,6 +19,7 @@ interface ArticlesListProps {
 
 interface ArticlesListItemProps {
   article: IArticle;
+  counter: number;
   narrow?: boolean;
 }
 
@@ -48,7 +50,7 @@ const ArticlesList: React.FC<ArticlesListProps> = ({
       <List>
         {articles.map((ap, index) => {
           return (
-            <ListItem key={index} article={ap} />
+            <ListItem key={index} article={ap} counter={articles.length - index}/>
           );
         })}
       </List>
@@ -58,7 +60,7 @@ const ArticlesList: React.FC<ArticlesListProps> = ({
 
 export default ArticlesList;
 
-const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
+const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow, counter }) => {
   if (!article) return null;
 
   const hasOverflow = narrow && article.title.length > 35;
@@ -67,12 +69,19 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
     <ArticleWrap>
       <Item>
         <div>
-          <Title dark hasOverflow={hasOverflow}>
-            {article.title}
-          </Title>
-          {/* <MetaData>
-            {article.date}
-          </MetaData> */}
+          <TitleWrap>
+            <ViewDetailLink to={article.slug} data-a11y="false">
+              {
+                counter < 10
+                ? <span> {"#0" + counter} </span>
+                : <span> {"#" + counter} </span>
+              }
+              <Icons.Link />
+            </ViewDetailLink>
+            <Title dark hasOverflow={hasOverflow}>
+              {article.title}
+            </Title>
+          </TitleWrap>
           <MDXRenderer content={article.body}>
           </MDXRenderer>
         </div>
@@ -109,6 +118,11 @@ const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
   margin-top: 160px;
   ${p => p.alwaysShowAllDetails && showDetails}
+
+  ${mediaqueries.tablet`
+    margin-top: 80px;
+  `}
+
 `;
 
 const List = styled.div`
@@ -138,73 +152,31 @@ const Item = styled.div`
     margin-bottom: 60px;
   `}
 
-  @media (max-width: 540px) {
-    background: ${p => p.theme.colors.card};
-  }
-
   ${mediaqueries.phablet`
     margin-bottom: 40px;
   `}
 
 `;
 
-const ImageContainer = styled.div`
-  position: relative;
-  height: 280px;
-  margin-bottom: 30px;
-  transition: transform 0.3s var(--ease-out-quad),
-    box-shadow 0.3s var(--ease-out-quad);
-
-  & > div {
-    height: 100%;
-  }
-
-  ${mediaqueries.tablet`
-    height: 200px;
-    margin-bottom: 35px;
-  `}
-
-  ${mediaqueries.phablet`
-    overflow: hidden;
-    margin-bottom: 0;
-    box-shadow: none;
-  `}
+const TitleWrap = styled.div`
+  max-width: 360px;
 `;
+
 
 const Title = styled(Headings.h2)`
   font-size: 28px;
   font-family: ${p => p.theme.fonts.title};
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
-  max-width: 300px;
   line-height: 1.15;
-  // ${limitToTwoLines};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
   `}
 
   ${mediaqueries.tablet`
-    font-size: 24px;  
-  `}
-
-  ${mediaqueries.phablet`
-    font-size: 22px;  
-    padding: 30px 20px 0;
-    margin-bottom: 10px;
-    -webkit-line-clamp: 3;
-  `}
-`;
-
-const MetaData = styled.div`
-  font-weight: 400;
-  font-size: 14px;
-  color: ${p => p.theme.colors.secondary};
-  opacity: 0.6;
-
-  ${mediaqueries.phablet`
+    font-size: 24px;
     max-width: 100%;
-    padding:  0 20px 30px;
   `}
 `;
 
@@ -212,48 +184,14 @@ const ArticleWrap = styled.div`
   position: relative;
 `;
 
-const ArticleLink = styled(Link)`
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transition: transform 0.33s var(--ease-out-quart);
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+const ViewDetailLink = styled(Link)`
+  font-weight: ${p => p.theme.fontsWeight.bold};
+  font-size: 48px;
+  color: ${p => p.theme.colors.grey};
+  font-family: ${p => p.theme.fonts.title};
+  transition: color 0.25s ease 0s;
 
-  &:hover ${ImageContainer}, &:focus ${ImageContainer} {
-    transform: translateY(-1px);
-    box-shadow: 0 30px 40px -20px rgba(41, 65, 69, 0.32),
-      0 30px 30px -30px rgba(41, 65, 69, 0.52);
+  &:hover {
+    color: ${p => p.theme.colors.secondary};
   }
-
-  &:hover h2,
-  &:focus h2 {
-    color: ${p => p.theme.colors.accent};
-  }
-
-  &[data-a11y='true']:focus::after {
-    content: '';
-    position: absolute;
-    left: -1.5%;
-    top: -2%;
-    width: 103%;
-    height: 104%;
-    border: 3px solid ${p => p.theme.colors.accent};
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 5px;
-  }
-
-  ${mediaqueries.phablet`
-    &:hover ${ImageContainer} {
-      transform: none;
-      box-shadow: initial;
-    }
-
-    &:active {
-      transform: scale(0.97) translateY(3px);
-    }
-  `}
 `;

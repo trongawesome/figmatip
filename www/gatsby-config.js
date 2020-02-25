@@ -1,16 +1,13 @@
 require("dotenv").config();
 
 const siteMetadata = {
-  title: `Trong Nguyen's Desk`,
-  name: `Trong Nguyen`,
+  title: `Awesome Figma Tips`,
+  name: `Awesome Figma Tips`,
   siteUrl: `https://trongnguyen.co`,
-  description: `Product Designer who's learning to write and express thoughts`,
+  description: `Small but awesome tips to work faster in Figma.`,
   hero: {
     heading: `Hi, I’m Trong, <br/>product designer.`,
     writingHeading: `Tips to <br/>fasten <br/>Figma <br/>workflow.`,
-    readingHeading: `Books for product designers`,
-    littleGalleryHeading: `Little big grid`,
-    littleGallerySubtitle: `Little works and experiments but my big pride. I pour them all in this grid.`,
     maxWidth: 480,
   },
   social: [

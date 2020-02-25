@@ -13,7 +13,7 @@ export default {
   hover: "rgba(0, 0, 0, 0.07)",
   gradient: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)",
   gradientImage: "linear-gradient(180deg, rgba(209, 232, 235, 0) 0%, rgba(209, 232, 235, 0.95) 71.88%, #D1E8EB 100%)",
-  articleText: "#EDEBEB",
+  articleText: "#E5E4E4",
   track: "rgba(8, 8, 11, 0.3)",
   progress: "#000",
   card: "#111111",

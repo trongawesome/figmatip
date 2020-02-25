@@ -10,27 +10,15 @@ const OrderedList = styled.ol`
   margin: 0 auto;
   transition: ${p => p.theme.colorModeTransition};
   font-size: 16px;
-
   width: 100%;
-  max-width: 680px;
-
-  ${mediaqueries.desktop`
-    max-width: 507px;
-  `}
 
   ${mediaqueries.tablet`
-    max-width: 486px;
-    padding-left: 0px;
-  `};
-
-  ${mediaqueries.phablet`
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0;
   `};
 
   li {
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 8px;
 
     ${mediaqueries.tablet`
       padding-left: 30px;
