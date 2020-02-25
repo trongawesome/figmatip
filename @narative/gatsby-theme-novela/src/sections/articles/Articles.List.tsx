@@ -18,6 +18,7 @@ interface ArticlesListProps {
 
 interface ArticlesListItemProps {
   article: IArticle;
+  counter: number;
   narrow?: boolean;
 }
 
@@ -48,7 +49,7 @@ const ArticlesList: React.FC<ArticlesListProps> = ({
       <List>
         {articles.map((ap, index) => {
           return (
-            <ListItem key={index} article={ap} />
+            <ListItem key={index} article={ap} counter={articles.length - index}/>
           );
         })}
       </List>
@@ -58,7 +59,7 @@ const ArticlesList: React.FC<ArticlesListProps> = ({
 
 export default ArticlesList;
 
-const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
+const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow, counter }) => {
   if (!article) return null;
 
   const hasOverflow = narrow && article.title.length > 35;
@@ -67,12 +68,16 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
     <ArticleWrap>
       <Item>
         <div>
-          <Title dark hasOverflow={hasOverflow}>
-            {article.title}
-          </Title>
-          {/* <MetaData>
-            {article.date}
-          </MetaData> */}
+          <TitleWrap>
+            {
+              counter < 10
+              ? <Counter> {"#0" + counter} </Counter>
+              : <Counter> {"#" + counter} </Counter>
+            }
+            <Title dark hasOverflow={hasOverflow}>
+              {article.title}
+            </Title>
+          </TitleWrap>
           <MDXRenderer content={article.body}>
           </MDXRenderer>
         </div>
@@ -109,6 +114,11 @@ const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
   margin-top: 160px;
   ${p => p.alwaysShowAllDetails && showDetails}
+
+  ${mediaqueries.tablet`
+    margin-top: 80px;
+  `}
+
 `;
 
 const List = styled.div`
@@ -137,10 +147,6 @@ const Item = styled.div`
   ${mediaqueries.tablet`
     margin-bottom: 60px;
   `}
-
-  @media (max-width: 540px) {
-    background: ${p => p.theme.colors.card};
-  }
 
   ${mediaqueries.phablet`
     margin-bottom: 40px;
@@ -171,40 +177,36 @@ const ImageContainer = styled.div`
   `}
 `;
 
+const TitleWrap = styled.div`
+  max-width: 360px;
+`;
+
+
 const Title = styled(Headings.h2)`
   font-size: 28px;
   font-family: ${p => p.theme.fonts.title};
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
-  max-width: 360px;
   line-height: 1.15;
-  // ${limitToTwoLines};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
   `}
 
   ${mediaqueries.tablet`
-    font-size: 24px;  
-  `}
-
-  ${mediaqueries.phablet`
-    font-size: 22px;  
-    padding: 30px 20px 0;
-    margin-bottom: 10px;
-    -webkit-line-clamp: 3;
+    font-size: 24px;
+    max-width: 100%;
   `}
 `;
 
-const MetaData = styled.div`
-  font-weight: 400;
-  font-size: 14px;
-  color: ${p => p.theme.colors.secondary};
-  opacity: 0.6;
+const Counter = styled.div`
+  font-weight: ${p => p.theme.fontsWeight.bold};
+  font-size: 48px;
+  color: ${p => p.theme.colors.grey};
+  font-family: ${p => p.theme.fonts.title};
 
   ${mediaqueries.phablet`
-    max-width: 100%;
-    padding:  0 20px 30px;
+    
   `}
 `;
 

@@ -12,21 +12,7 @@ const UnorderedList = styled.ul`
   font-size: 18px;
 
   width: 100%;
-  max-width: 680px;
 
-  ${mediaqueries.desktop`
-    max-width: 507px;
-  `}
-
-  ${mediaqueries.tablet`
-    max-width: 486px;
-    padding-left: 0px;
-  `};
-
-  ${mediaqueries.phablet`
-    padding-left: 20px;
-    padding-right: 20px;
-  `};
 
   li {
     position: relative;

@@ -4,13 +4,8 @@ import mediaqueries from "@styles/media";
 
 const Section = styled.section<{ narrow?: boolean }>`
   width: 100%;
-  // max-width: 1220px;
   margin: 0 auto;
   padding: 0 8rem;
-
-  ${mediaqueries.desktop`
-    max-width: 850px;
-  `};
 
   ${p =>
     p.narrow
