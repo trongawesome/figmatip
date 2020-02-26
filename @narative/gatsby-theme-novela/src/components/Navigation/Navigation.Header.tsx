@@ -91,7 +91,7 @@ const NavigationHeader: React.FC<{}> = () => {
         </LogoLink>
         <NavControls>
           <NavLink to={`/about`} title={`About me`} activeClassName="active" >
-            About
+            Articles
           </NavLink>
           {/* <DarkModeToggle /> */}
         </NavControls>

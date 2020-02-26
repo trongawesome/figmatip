@@ -5,7 +5,8 @@ import mediaqueries from "@styles/media";
 const Section = styled.section<{ narrow?: boolean }>`
   width: 100%;
   margin: 0 auto;
-  padding: 0 8rem;
+  padding: 0 4rem;
+  max-width: 1310px;
 
   ${p =>
     p.narrow
@@ -20,6 +21,7 @@ const Section = styled.section<{ narrow?: boolean }>`
 
   ${mediaqueries.phablet`
     max-width: 100%;
+    padding: 0 2rem;
   `};
 `;
 

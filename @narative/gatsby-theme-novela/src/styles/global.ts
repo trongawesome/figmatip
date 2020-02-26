@@ -142,4 +142,19 @@ export const globalStyles = css`
     text-transform: uppercase;
     color: #3A5C21;
   }
+
+  [class*="ArticleBody"] .Grid {
+    & .video {
+      margin-top: 0 !important;
+    }
+  }
+
+  @media (max-width: 1070px) {
+    [class*="ArticleBody"] .Grid {
+      & .video {
+        margin-top: -100px !important;
+      }
+    }
+  }
+
 `;

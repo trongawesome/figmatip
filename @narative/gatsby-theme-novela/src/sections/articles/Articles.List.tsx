@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
@@ -12,9 +13,18 @@ import Icons from "@icons";
 
 import { GridLayoutContext } from './Articles.List.Context';
 
+const siteQuery = graphql`
+  {
+    allArticle {
+      totalCount
+    }
+  }
+`;
+
 interface ArticlesListProps {
   articles: IArticle[];
   alwaysShowAllDetails?: boolean;
+  currentPage: number;
 }
 
 interface ArticlesListItemProps {
@@ -26,6 +36,7 @@ interface ArticlesListItemProps {
 const ArticlesList: React.FC<ArticlesListProps> = ({
   articles,
   alwaysShowAllDetails,
+  currentPage
 }) => {
   if (!articles) return null;
 
@@ -39,6 +50,10 @@ const ArticlesList: React.FC<ArticlesListProps> = ({
     }
     return result;
   }, []);
+  const result = useStaticQuery(siteQuery);
+  const totalCount = result.allArticle.totalCount;
+  const pageLength = 8;
+  const sumArticlesInPreviousPage = (currentPage - 1) * pageLength;
 
   useEffect(() => getGridLayout(), []);
 
@@ -50,7 +65,7 @@ const ArticlesList: React.FC<ArticlesListProps> = ({
       <List>
         {articles.map((ap, index) => {
           return (
-            <ListItem key={index} article={ap} counter={articles.length - index}/>
+            <ListItem key={index} article={ap} counter={totalCount - index - sumArticlesInPreviousPage}/>
           );
         })}
       </List>
