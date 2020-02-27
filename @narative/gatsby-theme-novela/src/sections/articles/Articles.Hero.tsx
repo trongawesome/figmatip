@@ -126,12 +126,8 @@ const TextWrap = styled.div`
 const HeroContent = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: 480px 1fr;
+  grid-template-columns: 1fr 1fr;
   column-gap: 0;
-
-  ${mediaqueries.desktop`
-    grid-template-columns: 420px 1fr;
-  `}
 
   ${mediaqueries.tablet`
     grid-template-columns: 1fr;
