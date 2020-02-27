@@ -57,24 +57,11 @@ const AboutPage: Template = ({ location, pageContext }) => {
           </MyText>
         </ContentContainer>
       </Section>
-      <ArticlesGradient />
     </Layout>
   );
 };
 
 export default AboutPage;
-
-const ArticlesGradient = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 590px;
-  z-index: 0;
-  pointer-events: none;
-  background: ${p => p.theme.colors.gradient};
-  transition: ${p => p.theme.colorModeTransition};
-`;
 
 const HeadingContainer = styled.div`
   margin: 100px 0 76px;

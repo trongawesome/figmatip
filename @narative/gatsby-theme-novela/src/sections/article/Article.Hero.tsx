@@ -35,6 +35,10 @@ const Hero = styled.div`
   background-image: url("/image_hero_article.jpg");
   margin-top: -100px;
   padding-top: 220px;
+
+  ${mediaqueries.tablet`
+    background-image: url("/image_hero_article_mobile.jpg");
+  `}
 `;
 
 const Header = styled.header`
@@ -45,10 +49,6 @@ const Header = styled.header`
   ${mediaqueries.phablet`
     padding: 0;
   `}
-
-  @media screen and (max-height: 700px) {
-    margin: 100px auto 48px;
-  }
 `;
 
 const HeroHeading = styled(Headings.h1)`

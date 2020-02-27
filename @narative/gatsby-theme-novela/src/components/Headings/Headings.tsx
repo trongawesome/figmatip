@@ -26,7 +26,7 @@ const h1 = styled.h1`
   `};
 
   ${mediaqueries.phablet`
-    font-size: 40px;
+    font-size: 32px;
     line-height: 1.3;
   `};
 `;
