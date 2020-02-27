@@ -52,7 +52,10 @@ const Footer: React.FC<{}> = () => {
         <HoritzontalRule />
         <FooterContainer>
           <FooterText>
-            © {copyrightDate} {name}
+            © {copyrightDate} by
+            <Anchor target="_blank" href="https://trongnguyen.co">
+              Trong Nguyen
+            </Anchor>
           </FooterText>
           <div>
             <SocialLinks links={social} />
@@ -71,7 +74,7 @@ const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-bottom: 40px;
-  color: ${p => p.theme.colors.secondary};
+  color: ${p => p.theme.colors.grey};
 
   ${mediaqueries.tablet`
     flex-direction: column;
@@ -106,4 +109,16 @@ const FooterText = styled.div`
   ${mediaqueries.phablet`
     margin: 64px auto 24px;
   `}
+`;
+
+const Anchor = styled.a`
+  color: ${p => p.theme.colors.grey};
+  border-bottom: 1px solid ${p => p.theme.colors.grey};
+  margin-left: 6px;
+  
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.colors.accent};
+    border-bottom-color: ${p => p.theme.colors.accent};
+  }
 `;

@@ -23,7 +23,7 @@ const ArticlesPage: Template = ({ location, pageContext }) => {
       <ArticlesHero authors={authors} />
       <Section narrow>
         {/* <NavCategory category={category} /> */}
-        <ArticlesList articles={articles} />
+        <ArticlesList articles={articles} currentPage={pageContext.index} />
         <ArticlesPaginator show={pageContext.pageCount > 1}>
           <Paginator {...pageContext} />
         </ArticlesPaginator>

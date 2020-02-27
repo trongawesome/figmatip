@@ -321,11 +321,11 @@ const ImageCSS = css`
 `;
 
 const Grid = css`
+
   .Grid {
     display: grid;
     grid-gap: 80px;
     position: relative;
-    margin: 15px auto 50px;
     
     & .video {
       margin-top: -160px;

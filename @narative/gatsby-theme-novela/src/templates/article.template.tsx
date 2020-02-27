@@ -80,34 +80,17 @@ const Article: Template = ({ pageContext, location }) => {
     <Layout>
       <ArticleSEO article={article} authors={authors} location={location} />
       <ArticleHero article={article} authors={authors} />
-      <ArticleBody ref={contentSectionRef}>
-        <MDXRenderer content={article.body}>
-        </MDXRenderer>
-      </ArticleBody>
-      {mailchimp && article.subscription && <Subscription />}
-      {next.length > 0 && (
-        <NextArticle narrow>
-          <FooterNext>More from {name}</FooterNext>
-          <ArticlesNext articles={next} />
-          <FooterSpacer />
-        </NextArticle>
-      )}
+      <Section>
+        <ArticleBody ref={contentSectionRef}>
+            <MDXRenderer content={article.body}>
+            </MDXRenderer>
+        </ArticleBody>
+      </Section>
     </Layout>
   );
 };
 
 export default Article;
-
-const MobileControls = styled.div`
-  position: relative;
-  padding-top: 60px;
-  transition: background 0.2s linear;
-  text-align: center;
-
-  ${mediaqueries.tablet_up`
-    display: none;
-  `}
-`;
 
 const ArticleBody = styled.article`
   position: relative;
@@ -123,44 +106,3 @@ const ArticleBody = styled.article`
   `}
 `;
 
-const NextArticle = styled(Section)`
-  display: block;
-`;
-
-const FooterNext = styled.h3`
-  position: relative;
-  opacity: 0.25;
-  margin-bottom: 100px;
-  font-weight: 400;
-  color: ${p => p.theme.colors.primary};
-
-  ${mediaqueries.tablet`
-    margin-bottom: 60px;
-  `}
-
-  &::after {
-    content: '';
-    position: absolute;
-    background: ${p => p.theme.colors.grey};
-    width: ${(910 / 1140) * 100}%;
-    height: 1px;
-    right: 0;
-    top: 11px;
-
-    ${mediaqueries.tablet`
-      width: ${(600 / 1140) * 100}%;
-    `}
-
-    ${mediaqueries.phablet`
-      width: ${(400 / 1140) * 100}%;
-    `}
-
-    ${mediaqueries.phone`
-      width: 90px
-    `}
-  }
-`;
-
-const FooterSpacer = styled.div`
-  margin-bottom: 65px;
-`;
