@@ -102,7 +102,7 @@ const ArticleBody = styled.article`
   `}
 
   ${mediaqueries.phablet`
-    padding: 60px 0;
+    padding: 24px 0;
   `}
 `;
 
