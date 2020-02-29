@@ -183,7 +183,7 @@ const Title = styled(Headings.h2)`
   font-family: ${p => p.theme.fonts.title};
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
-  line-height: 1.15;
+  line-height: 1.25;
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;

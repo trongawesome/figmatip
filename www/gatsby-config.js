@@ -40,12 +40,12 @@ const plugins = [
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `Trong Nguyen's Desk`,
-      short_name: `Trong`,
+      name: `Awesome Figma Tips`,
+      short_name: `Figma Tips`,
       start_url: `/`,
-      background_color: `#D1E8EB`,
+      background_color: `#090A0B`,
       display: `standalone`,
-      icon: `src/assets/favicon.png`,
+      icon: `src/assets/favicon.jpg`,
       include_favicon: false,
     },
   },
