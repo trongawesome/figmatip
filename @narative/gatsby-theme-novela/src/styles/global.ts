@@ -145,7 +145,7 @@ export const globalStyles = css`
 
   article .Grid {
     & .video {
-      margin-top: 0 !important;
+      margin-top: -16px !important;
     }
   }
 
