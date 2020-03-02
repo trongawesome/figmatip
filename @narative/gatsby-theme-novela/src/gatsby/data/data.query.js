@@ -31,6 +31,7 @@ module.exports.local = {
           timeToRead
           excerpt
           subscription
+          feature
           body
           hero {
             seo: childImageSharp {
