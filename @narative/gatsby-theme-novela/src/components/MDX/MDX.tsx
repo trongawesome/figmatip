@@ -335,7 +335,7 @@ const Grid = css`
       `};
 
       ${mediaqueries.tablet`
-        margin-top: -104px;
+        margin-top: -128px;
       `};
     }
 

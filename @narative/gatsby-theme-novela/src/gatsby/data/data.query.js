@@ -31,6 +31,40 @@ module.exports.local = {
           timeToRead
           excerpt
           subscription
+          feature
+          body
+          hero {
+            seo: childImageSharp {
+              fixed(width: 1200, quality: 80) {
+                src
+              }
+            }
+          }
+        }
+      }
+    }
+  }`,
+
+  featuredArticles: `{
+    featuredArticles: allArticle(
+      sort: { fields: [date, title], order: DESC }
+      filter: {feature: {eq: true}}
+      limit: 8
+    ) {
+      edges {
+        node {
+          id
+          slug
+          secret
+          title
+          author
+          categories
+          date(formatString: "MMMM Do, YYYY")
+          dateForSEO: date
+          timeToRead
+          excerpt
+          subscription
+          feature
           body
           hero {
             seo: childImageSharp {
