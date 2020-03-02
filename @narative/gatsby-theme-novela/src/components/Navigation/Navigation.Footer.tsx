@@ -89,15 +89,15 @@ const FooterContainer = styled.div`
 
 const HoritzontalRule = styled.div`
   position: relative;
-  margin: 128px auto 32px;
+  margin: 208px auto 32px;
   border-bottom: 1px solid ${p => p.theme.colors.horizontalRule};
 
   ${mediaqueries.tablet`
-    margin: 92px auto 32px;
+    margin: 128px auto 32px;
   `}
 
   ${mediaqueries.phablet`
-    display: none;
+    // display: none;
   `}
 `;
 
