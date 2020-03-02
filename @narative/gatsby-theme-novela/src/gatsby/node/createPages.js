@@ -11,6 +11,7 @@ const createPaginatedPages = require('gatsby-paginate');
 const templatesDirectory = path.resolve(__dirname, '../../templates');
 const templates = {
   articles: path.resolve(templatesDirectory, 'articles.template.tsx'),
+  featuredArticles: path.resolve(templatesDirectory, 'featured.template.tsx'),
   article: path.resolve(templatesDirectory, 'article.template.tsx'),
   author: path.resolve(templatesDirectory, 'author.template.tsx'),
   category: path.resolve(templatesDirectory, 'category.template.tsx'),
@@ -52,9 +53,9 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     rootPath,
     basePath = '/',
     authorsPath = '/authors',
-    authorsPage = true,
+    authorsPage = false,
     categoryPath = '/categories',
-    // postsPath = '/writing',
+    postsPath = '/tips',
     pageLength = 8,
     sources = {},
     mailchimp = '',
@@ -67,7 +68,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   let articles;
 
   const dataSources = {
-    local: { authors: [], articles: [] },
+    local: { authors: [], articles: [], featuredArticles: [] },
     contentful: { authors: [], articles: [] },
     netlify: { authors: [], articles: [] },
   };
@@ -86,12 +87,17 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       log('Querying Authors & Articles source:', 'Local');
       const localAuthors = await graphql(query.local.authors);
       const localArticles = await graphql(query.local.articles);
+      const localFeaturedArticles = await graphql(query.local.featuredArticles);
 
       dataSources.local.authors = localAuthors.data.authors.edges.map(
         normalize.local.authors,
       );
 
       dataSources.local.articles = localArticles.data.articles.edges.map(
+        normalize.local.articles,
+      );
+
+      dataSources.local.featuredArticles = localFeaturedArticles.data.featuredArticles.edges.map(
         normalize.local.articles,
       );
       
@@ -125,8 +131,12 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     ...dataSources.contentful.articles,
     ...dataSources.netlify.articles,
   ].sort(byDate);
-
+  
   const articlesThatArentSecret = articles.filter(article => !article.secret);
+  
+  featuredArticles = [
+    ...dataSources.local.featuredArticles,
+  ].sort(byDate);
 
   // Combining together all the authors from different sources
   authors = getUniqueListBy(
@@ -169,11 +179,27 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   log('Creating', 'articles page');
   createPaginatedPages({
     edges: articlesThatArentSecret,
-    pathPrefix: basePath,
-    // pathPrefix: postsPath,
+    // pathPrefix: basePath,
+    pathPrefix: postsPath,
     createPage,
     pageLength,
     pageTemplate: templates.articles,
+    buildPath: buildPaginatedPath,
+    context: {
+      authors,
+      basePath,
+      skip: pageLength,
+      limit: pageLength,
+    },
+  });
+
+  log('Creating', 'featured articles page');
+  createPaginatedPages({
+    edges: featuredArticles,
+    pathPrefix: basePath,
+    createPage,
+    pageLength,
+    pageTemplate: templates.featuredArticles,
     buildPath: buildPaginatedPath,
     context: {
       authors,
