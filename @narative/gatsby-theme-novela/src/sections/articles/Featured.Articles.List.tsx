@@ -124,7 +124,7 @@ const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   ${p => p.alwaysShowAllDetails && showDetails}
 
   ${mediaqueries.tablet`
-    margin-top: 80px;
+    margin-top: 0;
   `}
 
 `;
