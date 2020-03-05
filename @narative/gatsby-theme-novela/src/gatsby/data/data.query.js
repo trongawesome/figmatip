@@ -49,7 +49,7 @@ module.exports.local = {
     featuredArticles: allArticle(
       sort: { fields: [date, title], order: DESC }
       filter: {feature: {eq: true}}
-      limit: 8
+      limit: 16
     ) {
       edges {
         node {
