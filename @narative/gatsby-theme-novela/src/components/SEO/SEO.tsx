@@ -69,7 +69,7 @@ const SEO: React.FC<HelmetProps> = ({
     path ? `${site.siteUrl}${path}` : site.siteUrl;
 
   // If no image is provided lets looks for a default novela static image
-  image = image ? image : '/preview.jpg';
+  image = image ? image : '/preview.jpg?=1';
 
   const metaTags = [
     { charset: 'utf-8' },
