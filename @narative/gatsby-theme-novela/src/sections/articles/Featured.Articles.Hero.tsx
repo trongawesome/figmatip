@@ -24,16 +24,6 @@ const myQuery = graphql`
         }
       }
     }
-
-    file(relativePath: {eq: "site-hero.jpg"}) {
-      id
-      childImageSharp {
-        fluid(maxWidth: 1400, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
   }
 `;
 
@@ -45,7 +35,6 @@ const FeaturedArticlesHero: React.FC<IAuthor> = ({ authors }) => {
 
   const results = useStaticQuery(myQuery);
   const hero = results.site.edges[0].node.siteMetadata.hero;
-  const heroImage = results.file.childImageSharp.fluid;
   
   return (
     <HeroContainer>
@@ -64,11 +53,11 @@ const FeaturedArticlesHero: React.FC<IAuthor> = ({ authors }) => {
           </HeroContent>
         </Section>
       </TextWrap>
-      <ImageWrap>
+      {/* <ImageWrap>
         <Image
           src={heroImage}
         />
-      </ImageWrap>
+      </ImageWrap> */}
     </HeroContainer>
   );
 };
@@ -81,6 +70,11 @@ const HeroContainer = styled.div`
   overflow: hidden;
   margin-top: -100px;
   height: 800px;
+  background-image: url("/site-hero.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 
   ${mediaqueries.tablet`
     height: 536px;
