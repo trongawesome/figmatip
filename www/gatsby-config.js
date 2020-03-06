@@ -3,7 +3,7 @@ require("dotenv").config();
 const siteMetadata = {
   title: `Awesome Figma Tips`,
   name: `Awesome Figma Tips`,
-  siteUrl: `https://trongnguyen.co`,
+  siteUrl: `https://awesomefigmatips.com`,
   description: `Small but awesome tips to work faster in Figma.`,
   hero: {
     heading: `Hi, I’m Trong, <br/>product designer.`,
