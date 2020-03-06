@@ -52,7 +52,7 @@ const plugins = [
   {
     resolve: `gatsby-plugin-google-analytics`,
     options: {
-      trackingId: "UA-55380266-4",
+      trackingId: "UA-55380266-5",
     },
   },
   {
