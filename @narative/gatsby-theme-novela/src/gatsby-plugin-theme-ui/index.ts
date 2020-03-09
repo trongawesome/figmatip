@@ -24,8 +24,13 @@ const fontsWeight = {
   bold: "600",
 };
 
+const borderRadius = {
+  round: "32px",
+  shapr: "0",
+};
+
 const colorModeTransition =
-  'background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad)';
+  'background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad), border 0.25s var(--ease-in-out-quad)';
 
 export default merge({
   initialColorMode: 'light',
@@ -34,6 +39,7 @@ export default merge({
   colors,
   fonts,
   fontsWeight,
+  borderRadius,
   breakpoints,
   tags,
 });

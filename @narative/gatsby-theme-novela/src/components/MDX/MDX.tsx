@@ -210,7 +210,7 @@ const PrismCSS = p => css`
   }
 `;
 
-const VideoCSS = css`
+const VideoCSS = p => css`
   video {
     display: inline-block;
     position: relative;
@@ -218,6 +218,7 @@ const VideoCSS = css`
     height: auto;
     z-index: 0;
     margin: 15px auto 50px;
+    border-radius: ${p.theme.colors.borderRadius};
   }
 `;
 const ImageCSS = css`

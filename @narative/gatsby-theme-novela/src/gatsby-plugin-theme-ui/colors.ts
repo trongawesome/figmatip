@@ -24,6 +24,8 @@ export default {
   inputBackground: "rgba(0, 0, 0, 0.05)",
   textTitle: "#111111",
   neumorphismShadown: "10px 10px 22px rgba(156, 192, 197, 0.28), -10px -10px 24px rgba(240, 249, 250, 0.65)",
+  heroBackground: `url("/site-hero.jpg")`,
+  borderRadius: "32px",
   modes: {
     dark: {
       grey: "#73737D",
@@ -47,6 +49,8 @@ export default {
       inputBackground: "rgba(255, 255, 255, 0.07)",
       textTitle: "#fff",
       neumorphismShadown: "none",
+      heroBackground: "none",
+      borderRadius: "0",
     },
   },
 };
