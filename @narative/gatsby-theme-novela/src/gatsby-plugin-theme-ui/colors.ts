@@ -25,7 +25,7 @@ export default {
   textTitle: "#111111",
   neumorphismShadown: "10px 10px 22px rgba(156, 192, 197, 0.28), -10px -10px 24px rgba(240, 249, 250, 0.65)",
   heroBackground: `url("/site-hero.jpg")`,
-  borderRadius: "32px",
+  borderRadius: "4px",
   modes: {
     dark: {
       grey: "#73737D",
@@ -50,7 +50,7 @@ export default {
       textTitle: "#fff",
       neumorphismShadown: "none",
       heroBackground: "none",
-      borderRadius: "0",
+      borderRadius: "32px",
     },
   },
 };
