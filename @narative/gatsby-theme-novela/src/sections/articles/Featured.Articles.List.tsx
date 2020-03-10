@@ -134,6 +134,7 @@ const List = styled.div`
   grid-template-columns: 1fr;
   grid-column-gap: 30px;
   grid-template-rows: 2;
+  grid-row-gap: 76px;
 
   ${mediaqueries.tablet`
     grid-template-columns: 1fr;

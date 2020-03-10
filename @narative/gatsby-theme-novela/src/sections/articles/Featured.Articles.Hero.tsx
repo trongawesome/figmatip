@@ -70,8 +70,8 @@ const HeroContainer = styled.div`
   overflow: hidden;
   margin-top: -100px;
   height: 800px;
-  background-image: url("/site-hero.jpg");
-  // background-image: ${p => p.theme.colors.heroBackground};
+  // background-image: url("/site-hero.jpg");
+  background-image: ${p => p.theme.colors.heroBackground};
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,36 +81,6 @@ const HeroContainer = styled.div`
     height: 536px;
   `}
 
-`;
-
-const ImageWrap = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  & > div {
-    height: 100%;
-  }
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    width: 100%;
-    height: 140px;
-    bottom: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    background-repeat: no-repeat;
-    background-image: linear-gradient(180deg, rgba(9, 10, 11, 0) 0%, #090A0B 100%);
-
-  }
 `;
 
 const TextWrap = styled.div`
@@ -158,7 +128,8 @@ const HeroHeading = styled.h1`
   font-family: ${p => p.theme.fonts.title};
   color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(92.72deg, #E0EBF2 4.64%, #F2B5B0 87.93%);
+  // background-image: linear-gradient(92.72deg, #E0EBF2 4.64%, #F2B5B0 87.93%);
+  background-image: ${p => p.theme.colors.gradientText};
 
   a {
     color: ${p => p.theme.colors.accent};
