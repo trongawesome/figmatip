@@ -70,8 +70,8 @@ const HeroContainer = styled.div`
   overflow: hidden;
   margin-top: -100px;
   height: 800px;
-  // background-image: url("/site-hero.jpg");
-  background-image: ${p => p.theme.colors.heroBackground};
+  background-image: url("/site-hero.jpg");
+  // background-image: ${p => p.theme.colors.heroBackground};
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
