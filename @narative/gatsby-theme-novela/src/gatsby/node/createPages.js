@@ -57,6 +57,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     categoryPath = '/categories',
     postsPath = '/tips',
     pageLength = 8,
+    pageLengthHome = 16,
     sources = {},
     mailchimp = '',
   } = themeOptions;
@@ -198,14 +199,14 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     edges: featuredArticles,
     pathPrefix: basePath,
     createPage,
-    pageLength,
+    pageLengthHome,
     pageTemplate: templates.featuredArticles,
     buildPath: buildPaginatedPath,
     context: {
       authors,
       basePath,
-      skip: pageLength,
-      limit: pageLength,
+      skip: pageLengthHome,
+      limit: pageLengthHome,
     },
   });
 
