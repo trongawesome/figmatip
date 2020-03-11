@@ -28,6 +28,7 @@ import Tiles from './ui/Tiles.Icon';
 // SVG
 import NotFound from './svg/NotFound';
 import FigmatipLogo from './svg/FigmatipLogo';
+import Hero from './svg/Hero';
 
 
 export default {
@@ -58,4 +59,5 @@ export default {
 
   NotFound,
   FigmatipLogo,
+  Hero,
 };

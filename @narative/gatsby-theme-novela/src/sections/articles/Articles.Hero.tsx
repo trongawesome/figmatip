@@ -31,7 +31,7 @@ const Hero = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  background-image: url("/image_hero_article.jpg");
+  // background-image: url("/image_hero_article.jpg");
   margin-top: -100px;
   padding-top: 300px;
   margin-bottom: -210px;
