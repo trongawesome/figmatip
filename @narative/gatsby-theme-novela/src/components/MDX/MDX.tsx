@@ -212,14 +212,19 @@ const PrismCSS = p => css`
 
 const VideoCSS = p => css`
   video {
-    display: inline-block;
-    position: relative;
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    z-index: 0;
-    margin: 15px auto 50px;
     border-radius: ${p.theme.colors.borderRadius};
+    border: ${p.theme.colors.borderThick};
+    box-shadow: ${p.theme.colors.neumorphismShadown};
+    transition: ${p.theme.colorModeTransition};
   }
+  
+  // .video {
+  //   box-shadow: ${p.theme.colors.neumorphismShadown};
+  //   z-index: 0;
+  //   position: relative;
+  // }
 `;
 const ImageCSS = css`
   .gatsby-resp-image-background-image {
@@ -330,6 +335,7 @@ const Grid = css`
     
     & .video {
       margin-top: -160px;
+      // margin: 15px auto 50px;
 
       ${mediaqueries.desktop`
         margin-top: -112px;

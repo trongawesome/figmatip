@@ -120,7 +120,7 @@ const showDetails = css`
 
 const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
-  margin-top: 160px;
+  margin-top: 40px;
   ${p => p.alwaysShowAllDetails && showDetails}
 
   ${mediaqueries.tablet`
@@ -134,6 +134,7 @@ const List = styled.div`
   grid-template-columns: 1fr;
   grid-column-gap: 30px;
   grid-template-rows: 2;
+  grid-row-gap: 76px;
 
   ${mediaqueries.tablet`
     grid-template-columns: 1fr;

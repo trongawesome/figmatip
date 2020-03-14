@@ -30,7 +30,7 @@ const borderRadius = {
 };
 
 const colorModeTransition =
-  'background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad), border 0.25s var(--ease-in-out-quad)';
+  'background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad), border-radius 0.2s var(--ease-in-out-quad)';
 
 export default merge({
   initialColorMode: 'light',

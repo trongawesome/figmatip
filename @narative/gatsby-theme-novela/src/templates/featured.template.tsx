@@ -7,6 +7,7 @@ import Layout from "@components/Layout";
 import Paginator from "@components/Navigation/Navigation.Paginator";
 
 import FeaturedArticlesHero from "../sections/articles/Featured.Articles.Hero";
+// import FeaturedArticlesHero from "../sections/articles/Featured.Articles.Hero2";
 import ArticlesList from "../sections/articles/Featured.Articles.List";
 
 import { Template } from "@types";

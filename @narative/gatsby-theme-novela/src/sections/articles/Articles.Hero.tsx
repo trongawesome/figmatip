@@ -31,13 +31,13 @@ const Hero = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  background-image: url("/image_hero_article.jpg");
+  background-image: ${p => p.theme.colors.heroArticleBackgroundDesktop};
   margin-top: -100px;
   padding-top: 300px;
   margin-bottom: -210px;
 
   ${mediaqueries.tablet`
-    background-image: url("/image_hero_article_mobile.jpg");
+    background-image: ${p => p.theme.colors.heroArticleBackgroundMobile};
   `}
 `;
 

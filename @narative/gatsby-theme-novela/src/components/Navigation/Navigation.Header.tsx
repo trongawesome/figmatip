@@ -93,7 +93,7 @@ const NavigationHeader: React.FC<{}> = () => {
           <NavLink to={`/tips`} title={`All tips`} activeClassName="active" >
             All Tips
           </NavLink>
-          {/* <DarkModeToggle /> */}
+          <DarkModeToggle />
         </NavControls>
       </NavContainer>
     </Section>

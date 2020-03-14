@@ -47,12 +47,13 @@ const FeaturedArticlesHero: React.FC<IAuthor> = ({ authors }) => {
                 Small but awesome tips to work faster in Figma.
               </InfoText>
             </HeadingContainer>
-            <Logo>
-              <Icons.FigmatipLogo />
-            </Logo>
           </HeroContent>
         </Section>
       </TextWrap>
+      <SVGWrapper>
+        <Icons.Hero />
+      </SVGWrapper>
+      <GradientMask></GradientMask>
     </HeroContainer>
   );
 };
@@ -65,7 +66,8 @@ const HeroContainer = styled.div`
   overflow: hidden;
   margin-top: -100px;
   height: 800px;
-  background-image: ${p => p.theme.colors.heroBackground};
+  // background-image: url("/site-hero.jpg");
+  // background-image: ${p => p.theme.colors.heroBackground};
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,6 +77,24 @@ const HeroContainer = styled.div`
     height: 536px;
   `}
 
+`;
+
+const SVGWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+`;
+
+const GradientMask = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 112px;
+  bottom: 0;
+  left: 0;
+  background: ${p => p.theme.colors.gradient};
+  transition: ${p => p.theme.colorModeTransition};
 `;
 
 const TextWrap = styled.div`
@@ -95,7 +115,7 @@ const HeroContent = styled.div`
 `;
 
 const HeadingContainer = styled.div`
-  margin: 280px 0 40px;
+  margin: 240px 0 40px;
   
   ${mediaqueries.tablet`
     width: 100%;
@@ -105,18 +125,9 @@ const HeadingContainer = styled.div`
 
 const Logo = styled.div`
   position: relative;
-  width: 440px;
-  height: 440px;
+  width: 504px;
   justify-self: center;
-  margin-top: 200px;
-  padding: 56px;
-  border-radius: 50%;
-
-  background: ${p => p.theme.colors.gradientFill};
-  background-blend-mode: soft-light, normal;
-  border: ${p => p.theme.colors.neumorphismBorder};
-  box-shadow: ${p => p.theme.colors.neumorphismShadown};
-  transition: 0.33s transform ease-in-out;
+  margin-top: 136px;
 
   ${mediaqueries.tablet`
    display: none;
@@ -126,12 +137,11 @@ const Logo = styled.div`
 const HeroHeading = styled.h1`
   font-style: normal;
   font-weight: ${p => p.theme.fontsWeight.bold};
-  font-size: 64px;
+  font-size: 76px;
   line-height: 1.15;
   font-family: ${p => p.theme.fonts.title};
   color: transparent;
   -webkit-background-clip: text;
-  // background-image: linear-gradient(92.72deg, #E0EBF2 4.64%, #F2B5B0 87.93%);
   background-image: ${p => p.theme.colors.gradientText};
 
   a {
