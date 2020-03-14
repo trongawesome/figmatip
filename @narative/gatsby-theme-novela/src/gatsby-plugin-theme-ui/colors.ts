@@ -30,6 +30,7 @@ export default {
   heroArticleBackgroundDesktop: `url("/image_hero_article.jpg")`,
   heroArticleBackgroundMobile: `url("/image_hero_article_mobile.jpg")`,
   borderRadius: "8px",
+  borderRadiusM: "8px",
   borderThick: "4px solid rgba(44, 44, 44, 0.0)",
   modes: {
     dark: {
@@ -62,6 +63,7 @@ export default {
       heroArticleBackgroundDesktop: "none",
       heroArticleBackgroundMobile: "none",
       borderRadius: "40px",
+      borderRadiusM: "24px",
       borderThick: "4px solid #2C2C2C",
     },
   },
