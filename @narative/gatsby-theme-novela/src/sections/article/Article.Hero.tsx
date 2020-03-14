@@ -32,12 +32,12 @@ const Hero = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  // background-image: url("/image_hero_article.jpg");
+  background-image: ${p => p.theme.colors.heroArticleBackgroundDesktop};
   margin-top: -100px;
   padding-top: 220px;
-
+  
   ${mediaqueries.tablet`
-    background-image: url("/image_hero_article_mobile.jpg");
+    background-image: ${p => p.theme.colors.heroArticleBackgroundMobile};
   `}
 `;
 
@@ -58,7 +58,7 @@ const HeroHeading = styled(Headings.h1)`
   text-align: center;
   color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(92.72deg, #E0EBF2 0.64%, #F2B5B0 97.93%);
+  background-image: ${p => p.theme.colors.gradientText};
   
   ${mediaqueries.tablet`
     margin-bottom: 20px;

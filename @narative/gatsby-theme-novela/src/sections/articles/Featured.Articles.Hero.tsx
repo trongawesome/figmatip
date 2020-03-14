@@ -53,11 +53,6 @@ const FeaturedArticlesHero: React.FC<IAuthor> = ({ authors }) => {
           </HeroContent>
         </Section>
       </TextWrap>
-      {/* <ImageWrap>
-        <Image
-          src={heroImage}
-        />
-      </ImageWrap> */}
     </HeroContainer>
   );
 };
@@ -70,7 +65,6 @@ const HeroContainer = styled.div`
   overflow: hidden;
   margin-top: -100px;
   height: 800px;
-  // background-image: url("/site-hero.jpg");
   background-image: ${p => p.theme.colors.heroBackground};
   background-position: bottom;
   background-repeat: no-repeat;
@@ -111,9 +105,18 @@ const HeadingContainer = styled.div`
 
 const Logo = styled.div`
   position: relative;
-  width: 504px;
+  width: 480px;
+  height: 480px;
   justify-self: center;
-  margin-top: 136px;
+  margin-top: 200px;
+  padding: 56px;
+
+  background: ${p => p.theme.colors.gradientFill};
+  background-blend-mode: soft-light, normal;
+  border: ${p => p.theme.colors.neumorphismBorder};
+  border-radius: 64px;
+  box-shadow: ${p => p.theme.colors.neumorphismShadown};
+  transition: 0.33s transform ease-in-out;
 
   ${mediaqueries.tablet`
    display: none;
