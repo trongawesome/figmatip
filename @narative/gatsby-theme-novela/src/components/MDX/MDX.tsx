@@ -218,6 +218,10 @@ const VideoCSS = p => css`
     border: ${p.theme.colors.borderThick};
     box-shadow: ${p.theme.colors.neumorphismShadown};
     transition: ${p.theme.colorModeTransition};
+    
+    ${mediaqueries.tablet`
+      border-radius: ${p.theme.colors.borderRadiusM};
+    `};
   }
   
   // .video {
