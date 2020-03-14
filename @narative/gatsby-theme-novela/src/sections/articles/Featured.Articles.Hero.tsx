@@ -105,16 +105,16 @@ const HeadingContainer = styled.div`
 
 const Logo = styled.div`
   position: relative;
-  width: 480px;
-  height: 480px;
+  width: 440px;
+  height: 440px;
   justify-self: center;
   margin-top: 200px;
   padding: 56px;
+  border-radius: 50%;
 
   background: ${p => p.theme.colors.gradientFill};
   background-blend-mode: soft-light, normal;
   border: ${p => p.theme.colors.neumorphismBorder};
-  border-radius: 64px;
   box-shadow: ${p => p.theme.colors.neumorphismShadown};
   transition: 0.33s transform ease-in-out;
 

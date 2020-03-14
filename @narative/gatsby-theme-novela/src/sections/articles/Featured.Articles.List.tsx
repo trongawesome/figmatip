@@ -120,7 +120,7 @@ const showDetails = css`
 
 const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
-  margin-top: 160px;
+  margin-top: 40px;
   ${p => p.alwaysShowAllDetails && showDetails}
 
   ${mediaqueries.tablet`

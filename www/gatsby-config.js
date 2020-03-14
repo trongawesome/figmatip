@@ -4,7 +4,7 @@ const siteMetadata = {
   title: `Awesome Figma Tips`,
   name: `Awesome Figma Tips`,
   siteUrl: `https://awesomefigmatips.com`,
-  description: `Small but awesome tips to work faster in Figma.`,
+  description: `Cool collections of curated tips to help you work faster with Figma. There are tips I had learn on the way. I realized that some people might need it.`,
   hero: {
     heading: `Hi, I’m Trong, <br/>product designer.`,
     writingHeading: `Tips to <br/>fasten <br/>Figma <br/>workflow.`,
