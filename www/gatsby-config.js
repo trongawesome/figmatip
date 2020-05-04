@@ -19,7 +19,7 @@ const siteMetadata = {
       url: `https://medium.com/@trongawesome`,
     },
     {
-      name: 'instgram',
+      name: 'instagram',
       url: `https://www.instagram.com/trongawesome`,
     },
   ],
