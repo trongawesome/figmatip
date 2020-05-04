@@ -12,11 +12,15 @@ const siteMetadata = {
   },
   social: [
     {
-      url: `https://twitter.com/trongtnt92`,
+      url: `https://twitter.com/trongawesome`,
     },
     {
       name: 'medium',
-      url: `https://medium.com/@trongtnt92`,
+      url: `https://medium.com/@trongawesome`,
+    },
+    {
+      name: 'instgram',
+      url: `https://www.instagram.com/trongawesome`,
     },
   ],
 };
