@@ -1,9 +1,49 @@
-- title: Trong Nguyen Logo
-  image: ./images/book-cover-designing-for-emotion.jpg
-  desc: Trong Nguyen Logo description
-  url: https://trongnguyen.co
+- title: Skeuomorph Mobile Banking
+  image: ./images/figma-tips-skeuomorph.jpg
+  desc: Beautiful little UI kit and style guides are full of multiple mobile banking screens for Figma, completely free. A good source for you to study the Skeuomorph style.
+  url: https://www.figma.com/file/ZW0sbleWmP4aQsZ8OdweIJ/Skeuomorph-Small-Style-Guide?node-id=0%3A1
 
-- title: Trong Nguyen Logo 2
-  image: ./images/book-cover-designing-for-emotion.jpg
-  desc: Trong Nguyen Logo description
-  url: https://trongnguyen.co
+- title: Monument Valley
+  image: ./images/figma-tips-monument.jpg
+  desc: Have you ever thought that you can build Monument Valley inside Figma? This file is incredible.
+  url: https://www.figma.com/community/file/843899381761366385
+
+- title: Record player
+  image: ./images/figma-tips-record.jpg
+  desc: Vector Illustration of a record player and some toggles. A great example of color blending in Figma.
+  url: https://www.figma.com/community/file/810277954790146273
+
+- title: iOS/iPadOS 13 Design UI Kit 
+  image: ./images/figma-tips-ios-kit.jpg
+  desc: These resources help you design apps that match the iOS design language. Icon and glyph production files are preconfigured to automate asset production using Figma.
+  url: https://www.figma.com/community/file/768365747273056340
+
+- title: Interface Input Kit
+  image: ./images/figma-tips-input-kit.jpg
+  desc: Don’t spend time to rebuild the same types of inputs (buttons, radios, checkboxes, switches, etc.) when working on a new project. Instead, use this awesome collection to share.
+  url: https://www.figma.com/community/file/831737395628127231
+
+- title: Low-fidelity wireframing kit for Figma
+  image: ./images/figma-tips-lowfi-wireframe.jpg
+  desc: Speed up your workflow with this wireframe kit. If you’re at an early stage of your project, this kit is for you.
+  url: https://www.figma.com/resources/assets/wireframe-kit/
+
+- title: Feather Icons for Figma
+  image: ./images/figma-tips-feather.jpg
+  desc: Simply beautiful open source icons.
+  url: https://www.figma.com/resources/assets/feather-icons/
+
+- title: iPhone 8 and iPhoneX device mockups
+  image: ./images/figma-tips-iphone8.jpg
+  desc: Create beautiful mockups your iPhone 8 or iPhone X designs with these high-quality device frames. 
+  url: https://www.figma.com/resources/assets/iphone-mockups/
+
+- title: Microsoft VSCode
+  image: ./images/figma-tips-vscode.jpg
+  desc: Learn from the giant, Microsoft. A design toolkit for Visual Studio Code.
+  url: https://www.figma.com/community/file/786632241522687494
+
+- title: OSX Cursors
+  image: ./images/figma-tips-osx-cursors.jpg
+  desc: Realistic vector OS X Cursors to use them on our user flows and wireframes.
+  url: https://www.figma.com/file/KlaYtm6niCZRSahECyf3At/GUI-OSX-Cursors?node-id=0%3A1
