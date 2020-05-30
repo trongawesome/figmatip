@@ -66,7 +66,7 @@ export default {
       borderRadius: "40px",
       borderRadiusM: "24px",
       borderThick: "4px solid #2C2C2C",
-      backgroundDark: "#111314",
+      backgroundDark: "#FFFFFF",
     },
   },
 };
