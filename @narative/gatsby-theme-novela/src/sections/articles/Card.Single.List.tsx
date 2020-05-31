@@ -85,12 +85,24 @@ const ImageContainer = styled.div`
   & > div {
     height: 100%;
   }
+
+  ${mediaqueries.tablet`
+  height: 200px;
+  `}
+
 `;
 
 const TextWrap = styled.div`
   padding-right: 56px;
   padding-top: 32px;
   position: relative;
+
+  ${mediaqueries.tablet`
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+  `}
 `;
 
 const Title = styled(Headings.h2)`
@@ -103,11 +115,19 @@ const Title = styled(Headings.h2)`
   ${mediaqueries.desktop`
     margin-bottom: 15px;
   `}
+
+  ${mediaqueries.tablet`
+    font-size: 20px;
+  `}
 `;
 
 const Desc = styled.p`
   color: ${p => p.theme.colors.grey};
   margin-bottom: 32px;
+
+  ${mediaqueries.tablet`
+    font-size: 14px;
+  `}
 `;
 
 const ButtonLink = styled.div`
@@ -125,6 +145,10 @@ const ButtonLink = styled.div`
   ${mediaqueries.phablet`
     display: block;
   `};
+
+  ${mediaqueries.tablet`
+    display: none;
+  `}
 
   &:hover {
     background-color: ${p => p.theme.colors.secondary};

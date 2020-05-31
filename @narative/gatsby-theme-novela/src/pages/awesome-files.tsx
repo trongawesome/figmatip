@@ -6,9 +6,10 @@ import SEO from "@components/SEO";
 import Layout from "@components/Layout";
 import ArticlesGradient from "@components/ArticlesGradient";
 
+import PageHero from "../sections/others/Page.Hero";
 import CardSingleList from "../sections/articles/Card.Single.List";
 
-// const seoImage = '/trongnguyen.co-seo-little-big-grid.jpg';
+const seoImage = '/preview-figma-files.jpg';
 
 const siteQuery = graphql`
 {
@@ -28,29 +29,45 @@ const siteQuery = graphql`
       }
     }
   }
+
+  allSite {
+    edges {
+      node {
+        siteMetadata {
+          hero {
+            filesHeading
+            filesSub
+            maxWidth
+          }
+          title
+        }
+      }
+    }
+  }
 }
 `;
 
-const ImageGallery = ({ location }) => {
+const AwesomeFiles = ({ location }) => {
 
   const result = useStaticQuery(siteQuery);
   const data = result.allFigmaFilesYaml;
-  // const siteSEO = result.allSite.edges[0].node.siteMetadata;
+  const siteSEO = result.allSite.edges[0].node.siteMetadata;
 
   return (
     <Layout>
-      {/* <SEO
+
+      <SEO
         pathname={location.pathname} 
-        title={siteSEO.hero.littleGalleryHeading + " - " + siteSEO.title}
-        description={siteSEO.hero.littleGallerySubtitle}
+        title={siteSEO.hero.filesHeading + " - " + siteSEO.title}
+        description={siteSEO.hero.filesSub}
         image={seoImage}
       />
+
       <PageHero
-        heading={siteSEO.hero.littleGalleryHeading + "."}
-        subtitle={siteSEO.hero.littleGallerySubtitle}
+        heading={siteSEO.hero.filesHeading + "."}
+        subtitle={siteSEO.hero.filesSub}
         maxWidth={siteSEO.hero.maxWidth}
       />
-       */}
       <Section narrow>
         <CardSingleList data={data} />
       </Section>
@@ -59,4 +76,4 @@ const ImageGallery = ({ location }) => {
   );
 };
 
-export default ImageGallery;
+export default AwesomeFiles;

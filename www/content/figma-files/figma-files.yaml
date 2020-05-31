@@ -18,6 +18,11 @@
   desc: These resources help you design apps that match the iOS design language. Icon and glyph production files are preconfigured to automate asset production using Figma.
   url: https://www.figma.com/community/file/768365747273056340
 
+- title: Material Design 2.0 Theming kit
+  image: ./images/figma-tips-material.jpg
+  desc: The best Material Design kit ever. Too famous to be introduced.
+  url: https://www.figma.com/file/8dbmFxPJdkh6FLxwSyCRiC/Material-Design-Theme-Kit/duplicate?node-id=0%3A1
+
 - title: Interface Input Kit
   image: ./images/figma-tips-input-kit.jpg
   desc: Don’t spend time to rebuild the same types of inputs (buttons, radios, checkboxes, switches, etc.) when working on a new project. Instead, use this awesome collection to share.
