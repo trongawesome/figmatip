@@ -11,6 +11,8 @@ import CardSingleList from "../sections/articles/Card.Single.List";
 
 const seoImage = '/preview-figma-files.jpg';
 
+const regex = /(<([^>]+)>)/ig; //remove html tag
+
 const siteQuery = graphql`
 {
   allFigmaFilesYaml {
@@ -58,7 +60,7 @@ const AwesomeFiles = ({ location }) => {
 
       <SEO
         pathname={location.pathname} 
-        title={siteSEO.hero.filesHeading + " - " + siteSEO.title}
+        title={siteSEO.hero.filesHeading.replace(regex, '') + " - " + siteSEO.title}
         description={siteSEO.hero.filesSub}
         image={seoImage}
       />
