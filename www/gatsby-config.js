@@ -6,9 +6,9 @@ const siteMetadata = {
   siteUrl: `https://awesomefigmatips.com`,
   description: `Cool collections of curated tips to help you work faster with Figma. There are tips I had learn on the way. I realized that some people might need it.`,
   hero: {
-    heading: `Hi, I’m Trong, <br/>product designer.`,
-    writingHeading: `Tips to <br/>fasten <br/>Figma <br/>workflow.`,
-    filesHeading: `Awesome <br/>Figma Files`,
+    heading: `Hi, I’m Trong, <br/> product designer.`,
+    writingHeading: `Tips to <br/> fasten <br/>Figma <br/>workflow.`,
+    filesHeading: `Awesome <br/> Figma Files`,
     filesSub: `Fasten your next design project with this curated collection of awesome Figma files. Created by our awesome Figma community.`,
     maxWidth: 900,
   },
