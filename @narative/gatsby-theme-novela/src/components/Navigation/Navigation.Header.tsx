@@ -91,7 +91,10 @@ const NavigationHeader: React.FC<{}> = () => {
         </LogoLink>
         <NavControls>
           <NavLink to={`/tips`} title={`All tips`} activeClassName="active" >
-            All Tips
+            Tips
+          </NavLink>
+          <NavLink to={`/awesome-files`} title={`Awesome Figma Files`} activeClassName="active" >
+            Files
           </NavLink>
           <DarkModeToggle />
         </NavControls>

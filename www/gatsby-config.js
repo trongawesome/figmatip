@@ -8,7 +8,9 @@ const siteMetadata = {
   hero: {
     heading: `Hi, I’m Trong, <br/>product designer.`,
     writingHeading: `Tips to <br/>fasten <br/>Figma <br/>workflow.`,
-    maxWidth: 480,
+    filesHeading: `Awesome <br/>Figma Files`,
+    filesSub: `Fasten your next design project with this curated collection of awesome Figma files. Created by our awesome Figma community.`,
+    maxWidth: 900,
   },
   social: [
     {
