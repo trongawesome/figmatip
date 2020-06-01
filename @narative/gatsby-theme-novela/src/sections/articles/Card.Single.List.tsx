@@ -7,7 +7,7 @@ import mediaqueries from '@styles/media';
 import Headings from '@components/Headings';
 import Image from '@components/Image';
 
-const CardSingleList = ({data}) => {
+const CardSingleList = ({data, actionTitle}) => {
 
   const { edges } = data;
  
@@ -30,7 +30,7 @@ const CardSingleList = ({data}) => {
                   <Desc>
                     {item.node.desc}
                   </Desc>
-                  <ButtonLink>View this file →</ButtonLink>
+                  <ButtonLink>{actionTitle}</ButtonLink>
                   </TextWrap>
               </CardSingle>
           </CardLink>

@@ -4,6 +4,7 @@ module.exports = ({
   contentAuthors = 'content/authors',
   contentPosts = 'content/posts',
   contentFigmaFiles = 'content/figma-files',
+  contentFigmaPlugins = 'content/figma-plugins',
   pathPrefix = '',
   sources: { local, contentful } = { local: true, contentful: false },
 }) => ({
@@ -193,6 +194,13 @@ module.exports = ({
       options: {
         path: contentFigmaFiles,
         name: contentFigmaFiles,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: contentFigmaPlugins,
+        name: contentFigmaPlugins,
       },
     },
     {

@@ -9,14 +9,14 @@ import ArticlesGradient from "@components/ArticlesGradient";
 import PageHero from "../sections/others/Page.Hero";
 import CardSingleList from "../sections/articles/Card.Single.List";
 
-const seoImage = '/preview-figma-files.jpg';
-const actionTitle = 'View this file';
+const seoImage = '/preview-figma-plugins.jpg';
+const actionTitle = 'Install this plugin';
 
 const regex = /(<([^>]+)>)/ig; //remove html tag
 
 const siteQuery = graphql`
 {
-  allFigmaFilesYaml {
+  allFigmaPluginsYaml {
     edges {
       node {
         title
@@ -39,8 +39,8 @@ const siteQuery = graphql`
       node {
         siteMetadata {
           hero {
-            filesHeading
-            filesSub
+            pluginsHeading
+            pluginsSub
             maxWidth
           }
           title
@@ -54,7 +54,7 @@ const siteQuery = graphql`
 const Page = ({ location }) => {
 
   const result = useStaticQuery(siteQuery);
-  const data = result.allFigmaFilesYaml;
+  const data = result.allFigmaPluginsYaml;
   const siteSEO = result.allSite.edges[0].node.siteMetadata;
 
   return (
@@ -62,18 +62,18 @@ const Page = ({ location }) => {
 
       <SEO
         pathname={location.pathname} 
-        title={data.totalCount + " " + siteSEO.hero.filesHeading.replace(regex, '') + " 2020."}
-        description={siteSEO.hero.filesSub}
+        title={data.totalCount + " " + siteSEO.hero.pluginsHeading.replace(regex, '') + " 2020."}
+        description={siteSEO.hero.pluginsSub}
         image={seoImage}
       />
 
       <PageHero
-        heading={data.totalCount + " " + siteSEO.hero.filesHeading + " 2020."}
-        subtitle={siteSEO.hero.filesSub}
+        heading={data.totalCount + " " + siteSEO.hero.pluginsHeading + " 2020."}
+        subtitle={siteSEO.hero.pluginsSub}
         maxWidth={siteSEO.hero.maxWidth}
       />
       <Section narrow>
-        <CardSingleList data={data} actionTitle={actionTitle}/>
+        <CardSingleList data={data} actionTitle={actionTitle} />
       </Section>
       <ArticlesGradient />
     </Layout>
