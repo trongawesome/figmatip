@@ -51,7 +51,7 @@ const siteQuery = graphql`
 }
 `;
 
-const AwesomeFiles = ({ location }) => {
+const Page = ({ location }) => {
 
   const result = useStaticQuery(siteQuery);
   const data = result.allFigmaFilesYaml;
@@ -80,4 +80,4 @@ const AwesomeFiles = ({ location }) => {
   );
 };
 
-export default AwesomeFiles;
+export default Page;

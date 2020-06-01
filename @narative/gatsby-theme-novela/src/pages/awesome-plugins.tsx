@@ -9,7 +9,7 @@ import ArticlesGradient from "@components/ArticlesGradient";
 import PageHero from "../sections/others/Page.Hero";
 import CardSingleList from "../sections/articles/Card.Single.List";
 
-const seoImage = '/preview-figma-files.jpg';
+const seoImage = '/preview-figma-plugins.jpg';
 const actionTitle = 'Install this plugin';
 
 const regex = /(<([^>]+)>)/ig; //remove html tag
