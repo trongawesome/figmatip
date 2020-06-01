@@ -58,7 +58,7 @@ const HeroHeading = styled.h1`
   `}
 
   ${mediaqueries.tablet`
-    font-size: 44px;
+    font-size: 38px;
     text-align: center;
   `}
 `;

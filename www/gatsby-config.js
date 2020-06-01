@@ -10,6 +10,8 @@ const siteMetadata = {
     writingHeading: `Tips to <br/> fasten <br/>Figma <br/>workflow.`,
     filesHeading: `Awesome <br/> Figma Files`,
     filesSub: `Fasten your next design project with this curated collection of awesome Figma files. Created by our awesome Figma community.`,
+    pluginsHeading: `Awesome <br/> Figma Plugins`,
+    pluginsSub: `When Figma introduced plugins, the tool became more awesome. I love them so much and I want to share with you all my favorite ones. So you can fasten your workflow, and of course, design better.`,
     maxWidth: 900,
   },
   social: [

@@ -96,6 +96,9 @@ const NavigationHeader: React.FC<{}> = () => {
           <NavLink to={`/awesome-files`} title={`Awesome Figma Files`} activeClassName="active" >
             Files
           </NavLink>
+          <NavLink to={`/awesome-plugins`} title={`Awesome Figma Plugins`} activeClassName="active" >
+            Plugins
+          </NavLink>
           <DarkModeToggle />
         </NavControls>
       </NavContainer>
@@ -148,8 +151,10 @@ const NavLink = styled(Link)`
   position: relative;
   margin-left: 40px;
 
-  ${mediaqueries.phone`
-    margin-left: 32px;
+  ${mediaqueries.tablet`
+    margin-left: 16px;
+    font-size: 10px;
+    margin-top: 6px;
   `}
 
   &::after {
@@ -264,7 +269,7 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
   ${mediaqueries.tablet`
     display: inline-flex;
     transform: scale(0.708);
-    margin-left: 16px;
+    margin-left: 4px;
 
 
     &:hover {
