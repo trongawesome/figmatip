@@ -1,7 +1,7 @@
-- title: Skeuomorph Mobile Banking
-  image: ./images/figma-tips-skeuomorph.jpg
-  desc: Beautiful little UI kit and style guides are full of multiple mobile banking screens for Figma, completely free. A good source for you to study the Skeuomorph style.
-  url: https://www.figma.com/file/ZW0sbleWmP4aQsZ8OdweIJ/Skeuomorph-Small-Style-Guide?node-id=0%3A1
+- title: Uber Base Gallery
+  image: ./images/figma-tips-uber-base.jpg
+  desc: Uber's Base design system was created to promote a centralized library of reusable UI components for Designers and Engineers.
+  url: https://www.figma.com/community/file/805195278314519508
 
 - title: Monument Valley
   image: ./images/figma-tips-monument.jpg
@@ -48,7 +48,22 @@
   desc: Learn from the giant, Microsoft. A design toolkit for Visual Studio Code.
   url: https://www.figma.com/community/file/786632241522687494
 
+- title: Skeuomorph Mobile Banking
+  image: ./images/figma-tips-skeuomorph.jpg
+  desc: Whenever you start a new mobile web design, you need browser bars in your design to make it "real". Andreas Storm created a full collection for browser on iOS. Safari and Chrome.
+  url: https://www.figma.com/community/file/812413383162238236
+
+- title: iOS Browser UI Kit
+  image: ./images/figma-tips-browser-bar.jpg
+  desc: Beautiful little UI kit and style guides are full of multiple mobile banking screens for Figma, completely free. A good source for you to study the Skeuomorph style.
+  url: https://www.figma.com/file/ZW0sbleWmP4aQsZ8OdweIJ/Skeuomorph-Small-Style-Guide?node-id=0%3A1
+
 - title: OSX Cursors
   image: ./images/figma-tips-osx-cursors.jpg
   desc: Realistic vector OS X Cursors to use them on our user flows and wireframes.
   url: https://www.figma.com/file/KlaYtm6niCZRSahECyf3At/GUI-OSX-Cursors?node-id=0%3A1
+
+- title: Paaatterns!
+  image: ./images/figma-tips-patttern.jpg
+  desc: 22 free crafted patterns for all vector formats.
+  url: https://products.ls.graphics/paaatterns/
