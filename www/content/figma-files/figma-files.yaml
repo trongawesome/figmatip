@@ -1,7 +1,7 @@
-- title: Uber Base Gallery
-  image: ./images/figma-tips-uber-base.jpg
-  desc: Uber's Base design system was created to promote a centralized library of reusable UI components for Designers and Engineers.
-  url: https://www.figma.com/community/file/805195278314519508
+- title: 9 Smart Animate Examples
+  image: ./images/figma-tips-smart-animate.jpg
+  desc: Nine different examples of how to put smart animate to use.
+  url: https://www.figma.com/community/file/812143143597260055
 
 - title: Monument Valley
   image: ./images/figma-tips-monument.jpg
@@ -33,6 +33,11 @@
   desc: Speed up your workflow with this wireframe kit. If you’re at an early stage of your project, this kit is for you.
   url: https://www.figma.com/resources/assets/wireframe-kit/
 
+- title: Uber Base Gallery
+  image: ./images/figma-tips-uber-base.jpg
+  desc: Uber's Base design system was created to promote a centralized library of reusable UI components for Designers and Engineers.
+  url: https://www.figma.com/community/file/805195278314519508
+  
 - title: Feather Icons for Figma
   image: ./images/figma-tips-feather.jpg
   desc: Simply beautiful open source icons.
