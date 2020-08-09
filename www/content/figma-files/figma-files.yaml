@@ -1,3 +1,13 @@
+- title: Apple Widgets UI Kit
+  image: ./images/figma-tips-apple-widget.jpg
+  desc: Duplicate this UI kit to kick start your designs and prototypes when you work on Apple Widgets for iOS 14
+  url: https://www.figma.com/community/file/857332868558500566
+  
+- title: ADG Components
+  image: ./images/figma-tips-tlassian-comp.jpg
+  desc: Atlassian's component pack. This includes all of our molecular components - small pieces of our foundations library all merged together to create useful, reusable components. 
+  url: https://www.figma.com/community/file/857042825430121164
+
 - title: 9 Smart Animate Examples
   image: ./images/figma-tips-smart-animate.jpg
   desc: Nine different examples of how to put smart animate to use.
