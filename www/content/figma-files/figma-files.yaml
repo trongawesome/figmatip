@@ -66,12 +66,12 @@
 - title: Skeuomorph Mobile Banking
   image: ./images/figma-tips-skeuomorph.jpg
   desc: Beautiful little UI kit and style guides are full of multiple mobile banking screens for Figma, completely free. A good source for you to study the Skeuomorph style.
-  url: https://www.figma.com/community/file/812413383162238236
+  url: https://www.figma.com/file/ZW0sbleWmP4aQsZ8OdweIJ/Skeuomorph-Small-Style-Guide?node-id=0%3A1
 
 - title: iOS Browser UI Kit
   image: ./images/figma-tips-browser-bar.jpg
   desc:  Whenever you start a new mobile web design, you need browser bars in your design to make it "real". Andreas Storm created a full collection for browser on iOS. Safari and Chrome.
-  url: https://www.figma.com/file/ZW0sbleWmP4aQsZ8OdweIJ/Skeuomorph-Small-Style-Guide?node-id=0%3A1
+  url: https://www.figma.com/community/file/812413383162238236
 
 - title: OSX Cursors
   image: ./images/figma-tips-osx-cursors.jpg
