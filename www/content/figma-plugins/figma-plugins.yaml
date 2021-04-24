@@ -1,3 +1,23 @@
+- title: Mesh Gradient
+  image: ./images/figma-tips-plugins-mesh-gradient.jpg
+  desc: Create beautiful gradients like how Apple did.
+  url: https://www.figma.com/community/plugin/958202093377483021/Mesh-Gradient
+
+- title: Easing Gradients
+  image: ./images/figma-tips-plugins-smooth-gradient.jpg
+  desc: Smoothen gradient fills with avoiding hard edges where they start and/or end
+  url: https://www.figma.com/community/plugin/907899097995668330/Easing-Gradients 
+
+- title: Figgy Exporter
+  image: ./images/figma-tips-plugins-figgy.jpg
+  desc: Create export settings for any selection for all platforms – Web, iOS, Android with one click.
+  url: https://www.figma.com/community/plugin/778302475291888898/Figgy-exporter
+
+- title: Figma Measure
+  image: ./images/figma-tips-plugins-figma-measure.jpg
+  desc: Besides Redlines, Figma is my new measure tool to create beautiful design spec to hand over to engineers.
+  url: https://www.figma.com/community/plugin/739918456607459153/Figma-Measure
+  
 - title: Unsplash
   image: ./images/figma-tips-plugins-unsplash.jpg
   desc: Everyone knows Unsplash. It helps insert beautiful images from Unsplash straight into your designs.
