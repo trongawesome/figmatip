@@ -1,3 +1,23 @@
+- title: Ghost
+  image: ./images/figma-tips-plugins-ghost.jpg
+  desc: A lightweight plugin that converts high-fidelity mockups to loading or “skeleton” screens. Trust me - it will save you 100s of hours.
+  url: https://www.figma.com/community/plugin/1017135840453013129/Ghost
+
+- title: BENZIN
+  image: ./images/figma-tips-plugins-benzin.jpg
+  desc: A free background remover. Works better than some paid alternatives. Created by Kirill Kulakov.
+  url: https://www.figma.com/community/plugin/912436486778130560/BENZIN---remove-background-for-free
+
+- title: 3D Transformer
+  image: ./images/figma-tips-plugins-3dtransformer.jpg
+  desc: A fantastic, simple plugin for making frames 3D. Very easy to use.Created by @d__raptis
+  url: https://www.figma.com/community/plugin/1009780509659307229/3D-Transformer
+
+- title: Typeout
+  image: ./images/figma-tips-plugins-typeout.jpg
+  desc: Typeout provides rich, relevant and quirky library of UX copies to make your designs more conversational and meaningful. Created by Srikant Shetty and Vivek Kaarthek.
+  url: https://www.figma.com/community/plugin/847852693987887357/Typeout
+
 - title: Mesh Gradient
   image: ./images/figma-tips-plugins-mesh-gradient.jpg
   desc: Create beautiful gradients like how Apple did.
