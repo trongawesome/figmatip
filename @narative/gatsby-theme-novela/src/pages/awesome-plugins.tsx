@@ -62,13 +62,13 @@ const Page = ({ location }) => {
 
       <SEO
         pathname={location.pathname} 
-        title={data.totalCount + " " + siteSEO.hero.pluginsHeading.replace(regex, '') + " 2021."}
+        title={data.totalCount + " " + siteSEO.hero.pluginsHeading.replace(regex, '') + " 2022."}
         description={siteSEO.hero.pluginsSub}
         image={seoImage}
       />
 
       <PageHero
-        heading={data.totalCount + " " + siteSEO.hero.pluginsHeading + " 2021."}
+        heading={data.totalCount + " " + siteSEO.hero.pluginsHeading + " 2022."}
         subtitle={siteSEO.hero.pluginsSub}
         maxWidth={siteSEO.hero.maxWidth}
       />
