@@ -56,6 +56,9 @@ const Footer: React.FC<{}> = () => {
             <Anchor target="_blank" href="https://trongnguyen.co">
               Trong Nguyen
             </Anchor>
+            <FootNote>
+              This is a personal project not affiliated with Figma
+            </FootNote>
           </FooterText>
           <div>
             <SocialLinks links={social} />
@@ -104,6 +107,7 @@ const HoritzontalRule = styled.div`
 const FooterText = styled.div`
   ${mediaqueries.tablet`
     margin-bottom: 80px;
+    text-align: center;
   `}
 
   ${mediaqueries.phablet`
@@ -121,4 +125,9 @@ const Anchor = styled.a`
     color: ${p => p.theme.colors.accent};
     border-bottom-color: ${p => p.theme.colors.accent};
   }
+`;
+
+const FootNote = styled.div`
+    font-size: 12px;
+    margin-top: 16px;
 `;
