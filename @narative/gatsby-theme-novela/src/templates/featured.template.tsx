@@ -9,7 +9,6 @@ import Paginator from "@components/Navigation/Navigation.Paginator";
 import FeaturedArticlesHero from "../sections/articles/Featured.Articles.Hero";
 // import FeaturedArticlesHero from "../sections/articles/Featured.Articles.Hero2";
 import ArticlesList from "../sections/articles/Featured.Articles.List";
-import Annnounce from "../sections/articles/Announce";
 
 
 import { Template } from "@types";
@@ -22,7 +21,6 @@ const FeaturedPage: Template = ({ location, pageContext }) => {
   return (
     <Layout>
       <SEO pathname={location.pathname} />
-      <Annnounce />
       <FeaturedArticlesHero authors={authors} />
       <Section narrow>
         <ArticlesList articles={articles} currentPage={pageContext.index} />
