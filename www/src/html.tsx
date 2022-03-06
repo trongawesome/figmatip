@@ -11,7 +11,7 @@ export default props => (
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
       <script
-        dangerouslySetInnerHTML={{ __html: `document.domain = "awesomefigmatips.com"` }}
+        dangerouslySetInnerHTML={{ __html: `document.domain = "awesomefigtips.com"` }}
       />
       {props.headComponents}
     </head>
